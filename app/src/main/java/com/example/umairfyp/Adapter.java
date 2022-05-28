@@ -4,11 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,8 +52,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         Data model= modelList.get(position);
         holder.team1tv.setText(model.getTeams().get(0));
         holder.team2tv.setText(model.getTeams().get(1));
-        if(model.getTeams().get(0).contains("Pakistan") || model.getTeams().get(1).contains("Pakistan"))
-            holder.mainLayout.setBackgroundColor(Color.GREEN);
         holder.matchtypetv.setText(model.getMatchType());
         holder.matchstatustv.setText(model.getStatus());
         holder.datetv.setText(model.getDate());
@@ -136,7 +132,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv;
         CardView cardView;
-        TableLayout mainLayout;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -148,7 +143,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             matchstatustv =itemView.findViewById(R.id.matchstatustv);
             datetv =itemView.findViewById(R.id.datetv);
             cardView =itemView.findViewById(R.id.cardview);
-            mainLayout = itemView.findViewById(R.id.tl_main_layout);
+
 
         }
     }

@@ -14,7 +14,7 @@ public interface Services {
     Call<Model> getCurrentMatches(
     );
 
-    @GET("players")
+    @GET("currentMatches")
     Call<Player> getPlayersList(
            @Query("apikey") String apiKey,
            @Query("offset") int pageNumber
