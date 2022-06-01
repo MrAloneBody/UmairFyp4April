@@ -3,21 +3,25 @@ package com.example.umairfyp
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.umairfyp.databinding.RowBatsmanBinding
 import com.example.umairfyp.databinding.RowPlayersBinding
+import com.example.umairfyp.model.Batsman_data.Batsman
 import com.example.umairfyp.model.players_list.Data
+import com.example.umairfyp.model.Batsman_data.Scorecard
 
 
-class MatchSummaryAdapter(private var playersList: List<Data>) : RecyclerView.Adapter<MatchSummaryAdapter.ViewHolder>(){
+class BatsmanAdapter(private var playersList: List<Data>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
 
-    class ViewHolder (val binding: RowPlayersBinding): RecyclerView.ViewHolder(binding.root)
+    class ViewHolder (val binding: RowBatsmanBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(RowPlayersBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(RowBatsmanBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = playersList[position]
-        holder.binding.tvPlayerName.text = player.name
+        holder.binding.batsmanName.text = Batsman.
+
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 

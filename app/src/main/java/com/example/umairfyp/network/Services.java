@@ -1,6 +1,7 @@
 package com.example.umairfyp.network;
 
 
+import com.example.umairfyp.model.Batsman_data.Scorecard;
 import com.example.umairfyp.model.Model;
 import com.example.umairfyp.model.players_list.Player;
 
@@ -14,11 +15,18 @@ public interface Services {
     Call<Model> getCurrentMatches(
     );
 
-    @GET("currentMatches")
+    @GET("players")
     Call<Player> getPlayersList(
            @Query("apikey") String apiKey,
            @Query("offset") int pageNumber
     );
+
+    @GET("match_scorecard")
+    Call<Scorecard> getScorecard(
+            @Query("apikey") String apikey,
+            @Query("matchId") String matchId
+    );
+
 
 //    @GET("list_movies.json")
 //    Call<Model> getMoviesList(

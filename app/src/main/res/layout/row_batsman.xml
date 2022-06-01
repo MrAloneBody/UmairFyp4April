@@ -23,6 +23,7 @@
         <TableRow>
 <!--for payer name-->
             <TextView
+                android:id="@+id/batsman_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -34,6 +35,7 @@
             <!--For Score of player-->
 
             <TextView
+                android:id="@+id/batsman_score"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="1"
@@ -45,6 +47,7 @@
             <!--For balls  faced by player-->
 
             <TextView
+                android:id="@+id/batsman_bowls_faced"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="2"
@@ -56,6 +59,7 @@
             <!--For Strike rate of  player score/balls-->
 
             <TextView
+                android:id="@+id/batsman_sr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="3"
@@ -67,22 +71,13 @@
 
         </TableRow>
         <TableRow>
-            <!--for Cather/Stump-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:padding="10dp"
-                android:textColor="#000">
-
-            </TextView>
 
             <!--For name of bowler-->
 
             <TextView
+                android:id="@+id/dismissal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_column="1"
                 android:padding="10dp"
                 android:textColor="#000">
 
