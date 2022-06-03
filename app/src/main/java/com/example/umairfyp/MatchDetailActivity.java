@@ -25,7 +25,7 @@ import org.json.JSONObject;
 public class MatchDetailActivity extends AppCompatActivity {
 
 
-    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScoreTv, mDescriptionTv, mDateTv;
+    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDescriptionTv, mDateTv,mScore2Tv;
 
     // we will get unique id of the match from on click(intent)
 
@@ -58,7 +58,9 @@ public class MatchDetailActivity extends AppCompatActivity {
         mTeam1Tv = findViewById(R.id.team1tv);
         mTeam2Tv = findViewById(R.id.team2tv);
         mMatchStatusTv = findViewById(R.id.matchstatustv);
-        mScoreTv = findViewById(R.id.scoreTv);
+        mScore1Tv = findViewById(R.id.score1Tv);
+        mScore2Tv = findViewById(R.id.score2Tv);
+
         mDateTv = findViewById(R.id.datetv);
 
         mDateTv.setText(date);
@@ -105,7 +107,7 @@ public class MatchDetailActivity extends AppCompatActivity {
                                 // so we are enclosing this in a separate try catch
                                 String score = jsonObject.getString("score");
                                 String description = jsonObject.getString("status");
-                                mScoreTv.setText(score);
+                                mScore1Tv.setText(score);
                                 mDescriptionTv.setText(description);
 
 

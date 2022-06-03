@@ -6,19 +6,19 @@
     android:id="@+id/cardview"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="#fff"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="3dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="1dp"
     >
 
     <TableLayout
         android:id="@+id/tl_main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:padding="1dp"
         android:stretchColumns="2">
 
         <TableRow>
-
+<!--
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -27,11 +27,13 @@
                 android:textColor="#000">
 
             </TextView>
-
+-->
             <TextView
                 android:id="@+id/team1tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="30dp"
                 android:textColor="#000"
                 >
             </TextView>
@@ -39,7 +41,7 @@
         </TableRow>
 
         <TableRow>
-            <TextView
+      <!--      <TextView
                 android:text="Team2                   :   "
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -47,36 +49,21 @@
                 android:layout_column="0">
 
             </TextView>
-
+-->
             <TextView
                 android:id="@+id/team2tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="30dp"
                 android:textColor="#000" >
+
             </TextView>
 
         </TableRow>
 
         <TableRow>
-            <TextView
-                android:text="Matchtype           :    "
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/matchtypetv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000" >
-            </TextView>
-
-        </TableRow>
-        <TableRow>
-            <TextView
+          <!--  <TextView
                 android:text="Match Status      :   "
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -84,9 +71,10 @@
                 android:layout_column="0">
 
             </TextView>
-
+-->
             <TextView
                 android:id="@+id/matchstatustv"
+                android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000">
@@ -94,7 +82,7 @@
 
         </TableRow>
         <TableRow>
-            <TextView
+          <!--  <TextView
                 android:text="Date                      :    "
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -102,9 +90,10 @@
                 android:layout_column="0">
 
             </TextView>
-
+-->
             <TextView
                 android:id="@+id/datetv"
+                android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000">
@@ -113,6 +102,25 @@
         </TableRow>
 
 
+        <TableRow>
+            <!--      <TextView
+                      android:text="Matchtype           :    "
+                      android:textColor="#000"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_column="0">
+
+                  </TextView>
+      -->
+            <TextView
+                android:id="@+id/matchtypetv"
+                android:paddingLeft="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000" >
+            </TextView>
+
+        </TableRow>
 
 
 

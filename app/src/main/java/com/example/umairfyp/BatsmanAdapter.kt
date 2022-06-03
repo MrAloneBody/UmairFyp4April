@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowBatsmanBinding
 import com.example.umairfyp.databinding.RowPlayersBinding
 import com.example.umairfyp.model.Batsman_data.Batsman
+import com.example.umairfyp.model.Batsman_data.Score
 import com.example.umairfyp.model.players_list.Data
 import com.example.umairfyp.model.Batsman_data.Scorecard
 
 
-class BatsmanAdapter(private var playersList: List<Data>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
+class BatsmanAdapter(private var Scorecard: List<Scorecard>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
 
     class ViewHolder (val binding: RowBatsmanBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -19,14 +20,14 @@ class BatsmanAdapter(private var playersList: List<Data>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var player = playersList[position]
-        holder.binding.batsmanName.text = Batsman.
+        var player = Scorecard[position]
+       // holder.binding.batsmanName.text =
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 
     override fun getItemCount(): Int {
-        return playersList.size
+        return Scorecard.size
     }
 
     private var mListener: OnItemClick? = null

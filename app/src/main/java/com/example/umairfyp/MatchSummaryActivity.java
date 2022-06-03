@@ -20,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 
 public class MatchSummaryActivity extends AppCompatActivity {
 
-    String url="";
+    String url="https://api.cricapi.com/v1/match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
         Intent intent= getIntent();
         String uniqueId = intent.getStringExtra("match_id");
-        url = url + uniqueId;
-
+        
         //Load Data
         loadData();
 
