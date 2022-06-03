@@ -1,7 +1,6 @@
 package com.example.umairfyp.model.Batsman_data;
 
 import java.util.List;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -13,9 +12,6 @@ public class Data {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("matchType")
-    @Expose
-    private String matchType;
     @SerializedName("status")
     @Expose
     private String status;
@@ -31,6 +27,9 @@ public class Data {
     @SerializedName("teams")
     @Expose
     private List<String> teams = null;
+    @SerializedName("teamInfo")
+    @Expose
+    private List<TeamInfo> teamInfo = null;
     @SerializedName("score")
     @Expose
     private List<Score> score = null;
@@ -40,9 +39,6 @@ public class Data {
     @SerializedName("tossChoice")
     @Expose
     private String tossChoice;
-    @SerializedName("matchWinner")
-    @Expose
-    private String matchWinner;
     @SerializedName("series_id")
     @Expose
     private String seriesId;
@@ -64,14 +60,6 @@ public class Data {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getMatchType() {
-        return matchType;
-    }
-
-    public void setMatchType(String matchType) {
-        this.matchType = matchType;
     }
 
     public String getStatus() {
@@ -114,6 +102,14 @@ public class Data {
         this.teams = teams;
     }
 
+    public List<TeamInfo> getTeamInfo() {
+        return teamInfo;
+    }
+
+    public void setTeamInfo(List<TeamInfo> teamInfo) {
+        this.teamInfo = teamInfo;
+    }
+
     public List<Score> getScore() {
         return score;
     }
@@ -136,14 +132,6 @@ public class Data {
 
     public void setTossChoice(String tossChoice) {
         this.tossChoice = tossChoice;
-    }
-
-    public String getMatchWinner() {
-        return matchWinner;
-    }
-
-    public void setMatchWinner(String matchWinner) {
-        this.matchWinner = matchWinner;
     }
 
     public String getSeriesId() {
