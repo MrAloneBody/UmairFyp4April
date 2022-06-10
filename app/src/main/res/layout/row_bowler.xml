@@ -27,7 +27,6 @@
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:padding="10dp"
-                tools:text="Shahiod Afridirfrfrfrfrfrfrf"
                 android:textColor="#000">
 
             </TextView>
@@ -66,6 +65,17 @@
 
             </TextView>
 
+            <!--Wickets taken by bowler-->
+
+            <TextView
+                android:id="@+id/wickets_taken"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="4"
+                android:padding="10dp"
+                android:textColor="#000">
+
+            </TextView>
 
         </TableRow>
 

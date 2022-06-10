@@ -39,7 +39,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup , int position) {
 
-        //this method will be called whenever our viewholder will be created
+        //this method will be called whenever our view holder will be created
         //inflate the layout row.xml
 
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_match, viewGroup , false);
@@ -50,7 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        //this will bind the data to viewholder from where it'll be shown in other groups
+        //this will bind the data to view holder from where it'll be shown in other groups
         Data model= modelList.get(position);
         holder.team1tv.setText(model.getTeams().get(0));
         holder.team2tv.setText(model.getTeams().get(1));
@@ -71,7 +71,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                 String  date= model.getDate();
 
                 //options to Display in dialog
-                String[] options= {"Match Detials","Players List","Match Summary"};
+                String[] options= {"Match Details","Players List","Match Summary"};
 
                 //Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());

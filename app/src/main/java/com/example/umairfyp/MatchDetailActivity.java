@@ -17,15 +17,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONObject;
-
-
-
 
 public class MatchDetailActivity extends AppCompatActivity {
 
 
-    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDescriptionTv, mDateTv,mScore2Tv;
+    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv;
+    String team1,team2,matchStatus,score1,score2;
 
     // we will get unique id of the match from on click(intent)
 
@@ -36,7 +33,7 @@ public class MatchDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_detail);
+        setContentView(R.layout.row_matchdetail);
 
         //Actionbar
 
@@ -80,7 +77,7 @@ public class MatchDetailActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //this method will becalled when the response from the server is recieved, dismiss the dialog first
+                        //this method will be called when the response from the server is recieved, dismiss the dialog first
 
 
                         pd.dismiss();
@@ -90,25 +87,22 @@ public class MatchDetailActivity extends AppCompatActivity {
                         it may cause exception so we will use try catch*/
                         try {
 
-                            // DAta from Api
-                            JSONObject jsonObject = new JSONObject(response);
-                            // these values will be received whether match is started or not
-                            String team1 = jsonObject.getString("teams");
-                            String team2 = jsonObject.getString("teams");
-                            String matchStatus = jsonObject.getString("status");
 
                             //set this data
+
                             mTeam1Tv.setText(team1);
                             mTeam2Tv.setText(team2);
+                            mScore1Tv.setText(score1);
+                            mScore2Tv.setText(score2);
+                            
                             mMatchStatusTv.setText(matchStatus);
 
                             try {
                                 //these values will be received only if the match is started
                                 // so we are enclosing this in a separate try catch
-                                String score = jsonObject.getString("score");
-                                String description = jsonObject.getString("status");
-                                mScore1Tv.setText(score);
-                                mDescriptionTv.setText(description);
+
+                                mScore1Tv.setText(score1);
+                                mScore2Tv.setText(score2);
 
 
                             }
