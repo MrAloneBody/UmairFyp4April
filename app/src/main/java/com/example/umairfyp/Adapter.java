@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     private List<Data> modelList;
     private Context context;
-
+    String match_id;
     //constructor
 
 
@@ -52,6 +53,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         //this will bind the data to view holder from where it'll be shown in other groups
         Data model= modelList.get(position);
+        match_id = model.getId();
         holder.team1tv.setText(model.getTeams().get(0));
         holder.team2tv.setText(model.getTeams().get(1));
         if(model.getTeams().get(0).contains("Pakistan") || model.getTeams().get(1).contains("Pakistan"))
@@ -84,8 +86,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                         if (which ==0){
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
-                            intent.putExtra("match_id",matchid);
+                            intent.putExtra("match_id",match_id);
                             intent.putExtra("date",date);
+                            intent.putExtra("Team1",model.getTeams().get(0));
+                            intent.putExtra("Team1score", String.valueOf(model.getScore().get(0)));
+                            intent.putExtra("Team2",model.getTeams().get(1));
+                            intent.putExtra("Team2Score", String.valueOf(model.getScore().get(1)));
+
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -94,7 +101,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                         }
 
                         if (which ==1){
-                            //PLayers list is clicked
+                            //Players list is clicked
 
                             Intent intent = new Intent(context, PlayersActivity.class);
                             intent.putExtra("match_id",matchid);

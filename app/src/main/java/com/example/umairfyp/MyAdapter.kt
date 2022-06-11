@@ -5,15 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowMatchBinding
-import com.example.umairfyp.databinding.RowMatchdetailBinding
 import com.example.umairfyp.model.Data
 
 class MyAdapter(var context: Context, var myList:List<Data>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
 
-    class ViewHolder (val binding: RowMatchdetailBinding): RecyclerView.ViewHolder(binding.root)
+    class ViewHolder (val binding: RowMatchBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(RowMatchdetailBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(RowMatchBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -22,8 +21,8 @@ class MyAdapter(var context: Context, var myList:List<Data>) : RecyclerView.Adap
         holder.binding.team2tv.text = model.teams[1]
         holder.binding.matchstatustv.setText(model.getStatus())
         holder.binding.datetv.setText(model.getDate())
-        holder.binding.score1Tv.text = model.score[0].toString()
-        holder.binding.score2Tv.text = model.score[1].toString()
+      //  holder.binding.score1Tv.text = model.score[0].toString()
+      //  holder.binding.score2Tv.text = model.score[1].toString()
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 

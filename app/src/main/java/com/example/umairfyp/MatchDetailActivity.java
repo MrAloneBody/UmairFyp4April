@@ -3,6 +3,7 @@ package com.example.umairfyp;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,6 +17,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.umairfyp.model.Data;
+import com.example.umairfyp.model.Model;
+
+import java.util.List;
 
 
 public class MatchDetailActivity extends AppCompatActivity {
@@ -30,10 +35,11 @@ public class MatchDetailActivity extends AppCompatActivity {
     private String url= "https://api.cricapi.com/v1/match_info?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0&id=";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.row_matchdetail);
+        setContentView(R.layout.match_details);
 
         //Actionbar
 
@@ -49,6 +55,10 @@ public class MatchDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id= intent.getStringExtra("match_id");
         String date = intent.getStringExtra("date");
+        String Team1= intent.getStringExtra("Team1");
+        String Team1Score= intent.getStringExtra("Team1Score");
+        String Team2 = intent.getStringExtra("Team2");
+        String Team2Score = intent.getStringExtra("Team2Score");
 
         url = url + id;
 
@@ -61,6 +71,10 @@ public class MatchDetailActivity extends AppCompatActivity {
         mDateTv = findViewById(R.id.datetv);
 
         mDateTv.setText(date);
+        mTeam1Tv.setText(Team1);
+        mScore1Tv.setText(Team1Score);
+        mTeam2Tv.setText(Team2);
+        mScore2Tv.setText(Team2Score);
 
         //get set data
         loadData();
@@ -90,11 +104,9 @@ public class MatchDetailActivity extends AppCompatActivity {
 
                             //set this data
 
-                            mTeam1Tv.setText(team1);
-                            mTeam2Tv.setText(team2);
-                            mScore1Tv.setText(score1);
-                            mScore2Tv.setText(score2);
-                            
+                         //   mTeam1Tv.setText(Team1);
+                         //   mTeam2Tv.setText(Team2);
+
                             mMatchStatusTv.setText(matchStatus);
 
                             try {

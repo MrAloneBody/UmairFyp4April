@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class PlayersActivity extends AppCompatActivity {
 
     TextView team1NameTv ,team2NameTv, team1PlayersTv ,team2PlayersTv;
-    private String url = " https://api.cricapi.com/v1/match_squad?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0&id=";
+    private String url = " https://api.cricapi.com/v1/match_squad?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +67,17 @@ public class PlayersActivity extends AppCompatActivity {
                         it may cause exception so we will use try catch*/
                 try {
 
-                    JSONArray squadArray = new JSONObject(response).getJSONArray("squad");
+                    JSONArray squadArray = new JSONObject(response).getJSONArray("data");
 
                     JSONObject json0 = squadArray.getJSONObject(0);
                     JSONObject json1 = squadArray.getJSONObject(1);
 
                     //get name of team1 and team2
-                    String team1Name = json0.getString("Name");
-                    String team2Name = json1.getString("Name");
+                    String team1Name = json0.getString("data.0.teamName");
+                    String team2Name = json1.getString("data.1.teamName");
 
-                    JSONArray team1Array = json0.getJSONArray("PLayers");
-                    JSONArray team2Array = json1.getJSONArray("PLayers");
+                    JSONArray team1Array = json0.getJSONArray("Players");
+                    JSONArray team2Array = json1.getJSONArray("Players");
 
                     team1NameTv.setText(team1Name);
                     team2NameTv.setText(team2Name);

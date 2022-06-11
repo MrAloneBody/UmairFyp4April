@@ -12,7 +12,7 @@ import com.example.umairfyp.model.players_list.Data
 import com.example.umairfyp.model.Batsman_data.Scorecard
 
 
-class BatsmanAdapter(private var scorecard: List<Scorecard>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
+class BatsmanAdapter2(private var scorecard: List<Scorecard>) : RecyclerView.Adapter<BatsmanAdapter2.ViewHolder>(){
 
 
     class ViewHolder (val binding: RowBatsmanBinding): RecyclerView.ViewHolder(binding.root)

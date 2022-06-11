@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MatchDetailActivity">
+    tools:context=".MatchDetailActivity"
+    android:id="@+id/match_details">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
