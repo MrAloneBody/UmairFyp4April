@@ -19,10 +19,9 @@ class MyAdapter(var context: Context, var myList:List<Data>) : RecyclerView.Adap
         val model = myList[position]
         holder.binding.team1tv.text = model.teams[0]
         holder.binding.team2tv.text = model.teams[1]
-        holder.binding.matchstatustv.setText(model.getStatus())
-        holder.binding.datetv.setText(model.getDate())
-      //  holder.binding.score1Tv.text = model.score[0].toString()
-      //  holder.binding.score2Tv.text = model.score[1].toString()
+        holder.binding.matchstatustv.text = model.status
+        holder.binding.datetv.text = model.date
+
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 

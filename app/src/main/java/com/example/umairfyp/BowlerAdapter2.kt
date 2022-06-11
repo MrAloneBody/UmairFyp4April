@@ -4,31 +4,28 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowBatsmanBinding
+import com.example.umairfyp.databinding.RowBowlerBinding
 import com.example.umairfyp.databinding.RowPlayersBinding
-import com.example.umairfyp.model.Batsman_data.Batsman
-import com.example.umairfyp.model.Batsman_data.Batting
-import com.example.umairfyp.model.Batsman_data.Score
-import com.example.umairfyp.model.players_list.Data
 import com.example.umairfyp.model.Batsman_data.Scorecard
+import com.example.umairfyp.model.players_list.Data
 
 
-class BatsmanAdapter2(private var scorecard: List<Scorecard>) : RecyclerView.Adapter<BatsmanAdapter2.ViewHolder>(){
+class BowlerAdapter2(private var scorecard: List<Scorecard>) : RecyclerView.Adapter<BowlerAdapter2.ViewHolder>(){
 
-
-    class ViewHolder (val binding: RowBatsmanBinding): RecyclerView.ViewHolder(binding.root)
+    class ViewHolder (val binding: RowBowlerBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(RowBatsmanBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(RowBowlerBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
-
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = scorecard[position]
-        holder.binding.BatsmanName.text = player.batting[1].batsman.name
-        holder.binding.Dismissal.text = player.batting[1].dismissalText
-        holder.binding.BatsmanScore.text = player.batting[1].r.toString()
-        holder.binding.BatsmanBowlsFaced.text = player.batting[1].b.toString()
-        holder.binding.BatsmanSr.text = player.batting[1].sr.toString()
+        holder.binding.BowlersName.text = player.bowling[1].bowler.name
+        holder.binding.BowlersOvers.text = player.bowling[1].o.toString()
+        holder.binding.BowlersScore.text = player.bowling[1].r.toString()
+        holder.binding.BowlersRR.text = player.bowling[1].eco.toString()
+        holder.binding.wicketsTaken.text = player.bowling[1].w.toString()
+
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
@@ -46,4 +43,3 @@ class BatsmanAdapter2(private var scorecard: List<Scorecard>) : RecyclerView.Ada
         mListener = onItemClick
     }
 }
-

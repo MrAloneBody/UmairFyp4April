@@ -19,14 +19,7 @@
 
         <TableRow>
 <!--
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:text="Team1                   :   "
-                android:textColor="#000">
 
-            </TextView>
 -->
             <TextView
                 android:id="@+id/team1tv"
@@ -37,18 +30,20 @@
                 android:textColor="#000"
                 >
             </TextView>
+            <TextView
+                android:id="@+id/TeamScore1tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:paddingLeft="5dp"
+                android:textColor="#000">
+
+            </TextView>
 
         </TableRow>
 
         <TableRow>
-      <!--      <TextView
-                android:text="Team2                   :   "
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0">
-
-            </TextView>
+      <!--
 -->
             <TextView
                 android:id="@+id/team2tv"
@@ -57,6 +52,15 @@
                 android:textStyle="bold"
                 android:textSize="30dp"
                 android:textColor="#000" >
+
+            </TextView>
+            <TextView
+                android:id="@+id/TeamScore2tv"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0">
 
             </TextView>
 

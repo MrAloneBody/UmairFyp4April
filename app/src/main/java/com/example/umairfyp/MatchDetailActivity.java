@@ -27,7 +27,6 @@ public class MatchDetailActivity extends AppCompatActivity {
 
 
     TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv;
-    String team1,team2,matchStatus,score1,score2;
 
     // we will get unique id of the match from on click(intent)
 
@@ -56,9 +55,11 @@ public class MatchDetailActivity extends AppCompatActivity {
         String id= intent.getStringExtra("match_id");
         String date = intent.getStringExtra("date");
         String Team1= intent.getStringExtra("Team1");
-        String Team1Score= intent.getStringExtra("Team1Score");
+        String Score1 = intent.getStringExtra("Score1");
         String Team2 = intent.getStringExtra("Team2");
-        String Team2Score = intent.getStringExtra("Team2Score");
+        String Score2 = intent.getStringExtra("Score2");
+        String MatchStatus= intent.getStringExtra("MatchStatus");
+
 
         url = url + id;
 
@@ -67,14 +68,14 @@ public class MatchDetailActivity extends AppCompatActivity {
         mMatchStatusTv = findViewById(R.id.matchstatustv);
         mScore1Tv = findViewById(R.id.score1Tv);
         mScore2Tv = findViewById(R.id.score2Tv);
-
         mDateTv = findViewById(R.id.datetv);
 
         mDateTv.setText(date);
         mTeam1Tv.setText(Team1);
-        mScore1Tv.setText(Team1Score);
+        mScore1Tv.setText(Score1);
         mTeam2Tv.setText(Team2);
-        mScore2Tv.setText(Team2Score);
+        mScore2Tv.setText(Score2);
+        mMatchStatusTv.setText(MatchStatus);
 
         //get set data
         loadData();
@@ -91,42 +92,9 @@ public class MatchDetailActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //this method will be called when the response from the server is recieved, dismiss the dialog first
-
+                        //this method will be called when the response from the server is received, dismiss the dialog first
 
                         pd.dismiss();
-
-
-                        /*json data is in response variable parameter of this function
-                        it may cause exception so we will use try catch*/
-                        try {
-
-
-                            //set this data
-
-                         //   mTeam1Tv.setText(Team1);
-                         //   mTeam2Tv.setText(Team2);
-
-                            mMatchStatusTv.setText(matchStatus);
-
-                            try {
-                                //these values will be received only if the match is started
-                                // so we are enclosing this in a separate try catch
-
-                                mScore1Tv.setText(score1);
-                                mScore2Tv.setText(score2);
-
-
-                            }
-                            catch (Exception e){
-                                Toast.makeText(MatchDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                        catch (Exception e){
-                            Toast.makeText(MatchDetailActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-
                     }
                 }, new Response.ErrorListener() {
             @Override

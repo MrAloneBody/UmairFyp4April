@@ -231,6 +231,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
            <!--Extras view  -->
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -239,6 +240,12 @@
                     android:textSize="20sp"
                     android:padding="10dp"
                     android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/extra_1stinning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
 
 
 
@@ -428,7 +435,6 @@
                 <!--Extras view  -->
 
                 <TextView
-                    android:id="@+id/extra_2ndinning"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Extras"
@@ -436,6 +442,12 @@
                     android:textSize="20sp"
                     android:padding="10dp"
                     android:textColor="#000"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/extra_2ndinning">
+
+                </TextView>
 
             </LinearLayout>
 
