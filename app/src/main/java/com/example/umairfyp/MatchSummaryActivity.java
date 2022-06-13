@@ -3,6 +3,8 @@ package com.example.umairfyp;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,16 +18,21 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.umairfyp.model.Batsman_data.Scorecard;
 
 
 public class MatchSummaryActivity extends AppCompatActivity {
 
     String url="https://api.cricapi.com/v1/match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id";
 
+    Scorecard scorecard_model;
+    RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_summary);
+        rv = findViewById(R.id.rv_1stBat);
+        rv.setLayoutManager(new LinearLayoutManager(this));
 
 
         //Actionbar
@@ -59,19 +66,9 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
                 //dismiss dialog
                 pd.dismiss();
-                /* json data is in response variablle  parameter of this function
-                it may cause exception so we eill try to catch it
-                */
-
-                try {
 
 
 
-
-                }
-                catch (Exception e){
-                    Toast.makeText(MatchSummaryActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
             }
         }, new Response.ErrorListener() {
             @Override

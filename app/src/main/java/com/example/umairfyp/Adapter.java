@@ -56,14 +56,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         Data model= modelList.get(position);
         match_id = model.getId();
         holder.team1tv.setText(model.getTeams().get(0));
-        holder.teamscore1.setText(model.getScore().get(0).getInning());
         holder.team2tv.setText(model.getTeams().get(1));
-        holder.teamscore2.setText(model.getScore().get(1).getInning());
 
         if(model.getTeams().get(0).contains("Pakistan") || model.getTeams().get(1).contains("Pakistan"))
             holder.mainLayout.setBackgroundColor(Color.GREEN);
         holder.matchtypetv.setText(model.getMatchType());
         holder.matchstatustv.setText(model.getStatus());
+        //   holder.teamscore1.setText(model.getScore().get(0).getR());
+        //   holder.teamscore2.setText(model.getScore().get(1).getR());
+
+
         holder.datetv.setText(model.getDate());
 
 
@@ -93,7 +95,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("match_id",match_id);
                             intent.putExtra("date",date);
                             intent.putExtra("Team1",model.getTeams().get(0));
-                            intent.putExtra("Score1", model.getScore().get(0).getO());
+                            intent.putExtra("Score1", model.getScore().get(0).getR());
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("Score2", model.getScore().get(1).getR());
                             intent.putExtra("MatchStatus",model.getStatus());
@@ -110,7 +112,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             //Players list is clicked
 
                             Intent intent = new Intent(context, PlayersActivity.class);
-                            intent.putExtra("match_id",matchid);
+                            intent.putExtra("match_id",match_id);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -120,7 +122,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             //MatchSummary is clicked
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
-                            intent.putExtra("match_id",matchid);
+                            intent.putExtra("match_id",match_id);
                             //intent.putExtra("")
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -157,9 +159,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             super(itemView);
 
             team1tv = itemView.findViewById(R.id.team1tv);
-            teamscore1 = itemView.findViewById(R.id.TeamScore1tv);
+            teamscore1 = itemView.findViewById(R.id.score1Tv);
             team2tv =itemView.findViewById(R.id.team2tv);
-            teamscore2 = itemView.findViewById(R.id.TeamScore2tv);
+            teamscore2 = itemView.findViewById(R.id.score2Tv);
             matchtypetv =itemView.findViewById(R.id.matchtypetv);
             matchstatustv =itemView.findViewById(R.id.matchstatustv);
             datetv =itemView.findViewById(R.id.datetv);
