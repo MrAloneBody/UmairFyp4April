@@ -37,23 +37,27 @@ public class MatchSummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_summary);
 
-
+/*
         rv1stbat = findViewById(R.id.rv_1stBat);
+        rv1stbat.setHasFixedSize(true);
         rv1stbat.setLayoutManager(new LinearLayoutManager(this));
         rv2ndbat = findViewById(R.id.rv_2ndBat);
+        rv2ndbat.setHasFixedSize(true);
         rv2ndbat.setLayoutManager(new LinearLayoutManager(this));
         rv1stbowl = findViewById(R.id.rv_1stBowl);
+        rv1stbowl.setHasFixedSize(true);
         rv1stbowl.setLayoutManager(new LinearLayoutManager(this));
         rv2ndbowl = findViewById(R.id.rv_2ndBowl);
+        rv2ndbowl.setHasFixedSize(true);
         rv2ndbowl.setLayoutManager(new LinearLayoutManager(this));
-
+*/
 
         //Actionbar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Players Details");
+   //     ActionBar actionBar = getSupportActionBar();
+    //    actionBar.setTitle("Players Details");
         //Back button
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+    //    actionBar.setDisplayShowHomeEnabled(true);
+    //    actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         Intent intent = getIntent();
@@ -62,14 +66,14 @@ public class MatchSummaryActivity extends AppCompatActivity {
         RetrofitClient.getInstance().getServices().getScorecard(apikey, uniqueId).enqueue(new Callback<Scorecard>() {
             @Override
             public void onResponse(Call<Scorecard> call, retrofit2.Response<Scorecard> response) {
-/*
-                scorecard_model = response.body();
+
+     /*            scorecard_model = response.body();
                 if(scorecard_model != null){
-                    BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.);
+                    BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.getBatting());
                     rv1stbat.setAdapter(batsmanAdapter);
 
                 }
-                if(scorecard_model != null){
+               if(scorecard_model != null){
                     BatsmanAdapter2 batsmanAdapter2 = new BatsmanAdapter2 (scorecard_model.getBatting());
                     rv2ndbat.setAdapter(batsmanAdapter2);
 
@@ -84,7 +88,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
                     rv1stbowl.setAdapter(bowlerAdapter2);
 
                 }
-*/`
+*/
             }
 
             @Override

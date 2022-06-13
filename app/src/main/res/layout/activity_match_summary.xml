@@ -147,13 +147,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000"/>
-                <androidx.recyclerview.widget.RecyclerView
+
+        <!--1st recycler view for bat 1st-->
+      <!--          <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_1stBat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
-
+-->
                 <TextView
                     android:id="@+id/fieldT2TitleTv"
                     android:layout_width="match_parent"
@@ -223,13 +225,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000"/>
-                <androidx.recyclerview.widget.RecyclerView
+
+
+        <!--2nd recycler view for bowl 1st-->
+ <!--               <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_1stBowl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
-
+-->
            <!--Extras view  -->
 
                 <TextView
@@ -349,13 +354,15 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"/>
 
-                <androidx.recyclerview.widget.RecyclerView
+
+            <!--3rd recycler view for bat 2nd -->
+        <!--        <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_2ndBat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
-
+-->
                 <TextView
                     android:id="@+id/bowlT2TitleTv"
                     android:layout_width="match_parent"
@@ -425,13 +432,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000"/>
-                <androidx.recyclerview.widget.RecyclerView
+
+
+            <!--4th recycler view for bowl 2nd-->
+        <!--        <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_2ndBowl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
-
+-->
                 <!--Extras view  -->
 
                 <TextView
