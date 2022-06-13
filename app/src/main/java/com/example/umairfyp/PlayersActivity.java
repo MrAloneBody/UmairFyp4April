@@ -39,6 +39,9 @@ public class PlayersActivity extends AppCompatActivity {
 
         Intent intent= getIntent();
         String uniqueid = intent.getStringExtra("match_id");
+        String team1Name= intent.getStringExtra("Team1");
+        String team2Name= intent.getStringExtra("Team2");
+
         url = url + uniqueid;
 
         team1NameTv = findViewById(R.id.team1NameTv);
@@ -46,7 +49,11 @@ public class PlayersActivity extends AppCompatActivity {
         team1PlayersTv = findViewById(R.id.team1PlayersTv);
         team2PlayersTv = findViewById(R.id.team2PlayersTv);
 
-        //loaddata funsction call
+
+        team1NameTv.setText(team1Name);
+        team2NameTv.setText(team2Name);
+
+        //load data function call
         loadData();
 
     }
@@ -72,15 +79,8 @@ public class PlayersActivity extends AppCompatActivity {
                     JSONObject json0 = squadArray.getJSONObject(0);
                     JSONObject json1 = squadArray.getJSONObject(1);
 
-                    //get name of team1 and team2
-                    String team1Name = json0.getString("data.0.teamName");
-                    String team2Name = json1.getString("data.1.teamName");
-
                     JSONArray team1Array = json0.getJSONArray("Players");
                     JSONArray team2Array = json1.getJSONArray("Players");
-
-                    team1NameTv.setText(team1Name);
-                    team2NameTv.setText(team2Name);
 
                     //get players name  of  team1
                     for (int i=0; i<team1Array.length(); i++)

@@ -26,7 +26,7 @@ import java.util.List;
 public class MatchDetailActivity extends AppCompatActivity {
 
 
-    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv;
+    TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv,mWickets1Tv,mOvers1Tv,mWickets2Tv,mOvers2Tv;
 
     // we will get unique id of the match from on click(intent)
 
@@ -52,16 +52,20 @@ public class MatchDetailActivity extends AppCompatActivity {
 
         //get data from intent (Onclick from previous activity)
         Intent intent = getIntent();
-        String id= intent.getStringExtra("match_id");
+     //   String id= intent.getStringExtra("match_id");
         String date = intent.getStringExtra("date");
         String Team1= intent.getStringExtra("Team1");
         String Score1 = intent.getStringExtra("Score1");
         String Team2 = intent.getStringExtra("Team2");
         String Score2 = intent.getStringExtra("Score2");
         String MatchStatus= intent.getStringExtra("MatchStatus");
+        String Wickets1 = intent.getStringExtra("Wickets1");
+        String Wickets2 = intent.getStringExtra("Wickets2");
+        String Overs1 = intent.getStringExtra("Overs1");
+        String Overs2 = intent.getStringExtra("Overs2");
 
 
-        url = url + id;
+        //    url = url + id;
 
         mTeam1Tv = findViewById(R.id.team1tv);
         mTeam2Tv = findViewById(R.id.team2tv);
@@ -69,6 +73,11 @@ public class MatchDetailActivity extends AppCompatActivity {
         mScore1Tv = findViewById(R.id.score1Tv);
         mScore2Tv = findViewById(R.id.score2Tv);
         mDateTv = findViewById(R.id.datetv);
+        mWickets1Tv = findViewById(R.id.wicket1tv);
+        mWickets2Tv = findViewById(R.id.wicket2tv);
+        mOvers1Tv = findViewById(R.id.over1tv);
+        mOvers2Tv = findViewById(R.id.over2tv);
+
 
         mDateTv.setText(date);
         mTeam1Tv.setText(Team1);
@@ -76,6 +85,11 @@ public class MatchDetailActivity extends AppCompatActivity {
         mTeam2Tv.setText(Team2);
         mScore2Tv.setText(Score2);
         mMatchStatusTv.setText(MatchStatus);
+        mWickets1Tv.setText(Wickets1);
+        mWickets2Tv.setText(Wickets2);
+        mOvers1Tv.setText(Overs1);
+        mOvers2Tv.setText(Overs2);
+
 
         //get set data
         loadData();

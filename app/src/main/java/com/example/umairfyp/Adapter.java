@@ -1,5 +1,6 @@
 package com.example.umairfyp;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -49,6 +50,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -62,9 +64,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             holder.mainLayout.setBackgroundColor(Color.GREEN);
         holder.matchtypetv.setText(model.getMatchType());
         holder.matchstatustv.setText(model.getStatus());
-        //   holder.teamscore1.setText(model.getScore().get(0).getR());
-        //   holder.teamscore2.setText(model.getScore().get(1).getR());
-
 
         holder.datetv.setText(model.getDate());
 
@@ -75,7 +74,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                 //Show dialog on click with options of "Match Details" and "PLayers Details"
 
-                String matchid = model.getId();
+                String match_id = model.getId();
                 String  date= model.getDate();
 
                 //options to Display in dialog
@@ -92,13 +91,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                         if (which ==0){
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
-                            intent.putExtra("match_id",match_id);
+                          //  intent.putExtra("match_id",match_id);
                             intent.putExtra("date",date);
                             intent.putExtra("Team1",model.getTeams().get(0));
-                            intent.putExtra("Score1", model.getScore().get(0).getR());
+                            intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                             intent.putExtra("Team2",model.getTeams().get(1));
-                            intent.putExtra("Score2", model.getScore().get(1).getR());
+                            intent.putExtra("Score2", model.getScore().get(1).getR().toString());
                             intent.putExtra("MatchStatus",model.getStatus());
+                            intent.putExtra("Wickets1",model.getScore().get(0).getW().toString());
+                            intent.putExtra("Wickets2",model.getScore().get(1).getW().toString());
+                            intent.putExtra("Overs1",model.getScore().get(0).getO().toString());
+                            intent.putExtra("Overs2",model.getScore().get(1).getO().toString());
 
 
 
@@ -110,9 +113,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                         if (which ==1){
                             //Players list is clicked
+                            int team1players,team2players;
 
                             Intent intent = new Intent(context, PlayersActivity.class);
                             intent.putExtra("match_id",match_id);
+                            intent.putExtra("Team1",model.getTeams().get(0));
+                            intent.putExtra("Team2",model.getTeams().get(1));
+
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);

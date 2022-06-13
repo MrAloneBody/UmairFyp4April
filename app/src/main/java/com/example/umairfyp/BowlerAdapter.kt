@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowBatsmanBinding
 import com.example.umairfyp.databinding.RowBowlerBinding
 import com.example.umairfyp.databinding.RowPlayersBinding
+import com.example.umairfyp.model.Batsman_data.Batting
+import com.example.umairfyp.model.Batsman_data.Bowling
 import com.example.umairfyp.model.Batsman_data.Scorecard
 import com.example.umairfyp.model.players_list.Data
 
 
-class BowlerAdapter(private var scorecard: List<Scorecard>) : RecyclerView.Adapter<BowlerAdapter.ViewHolder>(){
+class BowlerAdapter(private var scorecard: MutableList<Bowling>) : RecyclerView.Adapter<BowlerAdapter.ViewHolder>(){
 
     class ViewHolder (val binding: RowBowlerBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -20,11 +22,11 @@ class BowlerAdapter(private var scorecard: List<Scorecard>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = scorecard[position]
-        holder.binding.BowlersName.text = player.bowling[0].bowler.name
-        holder.binding.BowlersOvers.text = player.bowling[0].o.toString()
-        holder.binding.BowlersScore.text = player.bowling[0].r.toString()
-        holder.binding.BowlersRR.text = player.bowling[0].eco.toString()
-        holder.binding.wicketsTaken.text = player.bowling[0].w.toString()
+    //    holder.binding.BowlersName.text = player.bowling[0].bowler.name
+     //   holder.binding.BowlersOvers.text = player.bowling[0].o.toString()
+    //    holder.binding.BowlersScore.text = player.bowling[0].r.toString()
+    //    holder.binding.BowlersRR.text = player.bowling[0].eco.toString()
+     //   holder.binding.wicketsTaken.text = player.bowling[0].w.toString()
 
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
