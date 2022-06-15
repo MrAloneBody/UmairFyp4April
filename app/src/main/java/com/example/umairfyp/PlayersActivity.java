@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +22,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class PlayersActivity extends AppCompatActivity {
 
+    ListView team1_players_list,team2_players_list;
     TextView team1NameTv ,team2NameTv, team1PlayersTv ,team2PlayersTv;
     private String url = " https://api.cricapi.com/v1/match_squad?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id=";
 
@@ -29,6 +34,17 @@ public class PlayersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+
+        team1_players_list=(ListView) findViewById(R.id.Team1Playerslisttv);
+        team2_players_list=(ListView) findViewById(R.id.Team2Playerslisttv);
+        ArrayList<TextView> arrayList = new ArrayList<>();
+        arrayList.add(team1NameTv);
+        arrayList.add(team2NameTv);
+
+        ArrayAdapter arrayAdapter= new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
+        team2_players_list.setAdapter(arrayAdapter);
+        team1_players_list.setAdapter(arrayAdapter);
+
 
         //Actionbar
         ActionBar actionBar = getSupportActionBar();
@@ -46,8 +62,8 @@ public class PlayersActivity extends AppCompatActivity {
 
         team1NameTv = findViewById(R.id.team1NameTv);
         team2NameTv = findViewById(R.id.team2NameTv);
-        team1PlayersTv = findViewById(R.id.team1PlayersTv);
-        team2PlayersTv = findViewById(R.id.team2PlayersTv);
+   //     team1PlayersTv = findViewById(R.id.team1PlayersTv);
+ //       team2PlayersTv = findViewById(R.id.team2PlayersTv);
 
 
         team1NameTv.setText(team1Name);
@@ -72,7 +88,7 @@ public class PlayersActivity extends AppCompatActivity {
                 pd.dismiss();
                  /*json data is in response variable parameter of this function
                         it may cause exception so we will use try catch*/
-                try {
+ /*               try {
 
                     JSONArray squadArray = new JSONObject(response).getJSONArray("data");
 
@@ -100,7 +116,7 @@ public class PlayersActivity extends AppCompatActivity {
                 catch (Exception  e){
                     Toast.makeText(PlayersActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
+*/
             }
         }, new Response.ErrorListener() {
             @Override

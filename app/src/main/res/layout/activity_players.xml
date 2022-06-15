@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PlayersActivity">
-
+<!--
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,4 +60,52 @@
         </TableRow>
     </TableLayout>
 
-</LinearLayout>
+-->
+    <TextView
+
+        android:id="@+id/team1NameTv"
+        android:text="Team 1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+
+        />
+<ListView
+    android:layout_below="@id/team1NameTv"
+    android:id="@+id/Team1Playerslisttv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+</ListView>
+
+    <TextView
+
+        android:layout_below="@id/Team1Playerslisttv"
+        android:id="@+id/team2NameTv"
+        android:text="Team 2"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+
+        />
+    <ListView
+        android:layout_below="@id/team2NameTv"
+        android:id="@+id/Team2Playerslisttv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </ListView>
+
+
+
+
+</RelativeLayout>

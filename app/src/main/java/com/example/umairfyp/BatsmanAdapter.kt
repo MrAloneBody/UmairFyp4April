@@ -12,7 +12,7 @@ import com.example.umairfyp.model.players_list.Data
 import com.example.umairfyp.model.Batsman_data.Scorecard
 
 
-class BatsmanAdapter(private var scorecard: MutableList<Batting>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
+class BatsmanAdapter(private var scorecard: List<Batting>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){
 
 
     class ViewHolder (val binding: RowBatsmanBinding): RecyclerView.ViewHolder(binding.root)
@@ -24,11 +24,11 @@ class BatsmanAdapter(private var scorecard: MutableList<Batting>) : RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = scorecard[position]
-     //   holder.binding.BatsmanName.text = player.batting[0].batsman.name
-    //    holder.binding.Dismissal.text = player.batting[0].dismissalText
-     //   holder.binding.BatsmanScore.text = player.batting[0].r.toString()
-    //    holder.binding.BatsmanBowlsFaced.text = player.batting[0].b.toString()
-    //    holder.binding.BatsmanSr.text = player.batting[0].sr.toString()
+        holder.binding.BatsmanName.text = player.batsman.name
+   //     holder.binding.Dismissal.text = player.dismissalText
+    //    holder.binding.BatsmanScore.text = player.r.toString()
+    //    holder.binding.BatsmanBowlsFaced.text = player.b.toString()
+    //    holder.binding.BatsmanSr.text = player.sr.toString()
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }

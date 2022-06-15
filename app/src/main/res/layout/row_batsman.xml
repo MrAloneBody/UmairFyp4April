@@ -24,6 +24,7 @@
 <!--for payer name-->
             <TextView
                 android:id="@+id/Batsman_name"
+                android:hint="name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="0"
@@ -36,6 +37,7 @@
 
             <TextView
                 android:id="@+id/Batsman_score"
+                android:hint="Score"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="1"
@@ -48,6 +50,7 @@
 
             <TextView
                 android:id="@+id/Batsman_bowls_faced"
+                android:hint="Balls faced"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="2"
@@ -60,6 +63,7 @@
 
             <TextView
                 android:id="@+id/Batsman_sr"
+                android:hint="SR"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_column="3"
@@ -76,6 +80,7 @@
 
             <TextView
                 android:id="@+id/Dismissal"
+                android:hint="Dismissal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"

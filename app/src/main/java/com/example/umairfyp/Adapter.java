@@ -96,14 +96,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("Team1",model.getTeams().get(0));
                             intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                             intent.putExtra("Team2",model.getTeams().get(1));
-                            intent.putExtra("Score2", model.getScore().get(1).getR().toString());
                             intent.putExtra("MatchStatus",model.getStatus());
                             intent.putExtra("Wickets1",model.getScore().get(0).getW().toString());
-                            intent.putExtra("Wickets2",model.getScore().get(1).getW().toString());
                             intent.putExtra("Overs1",model.getScore().get(0).getO().toString());
-                            intent.putExtra("Overs2",model.getScore().get(1).getO().toString());
 
+                            int inning_size=model.getScore().size();
 
+                            if( inning_size >1 ) {
+                                intent.putExtra("Score2", model.getScore().get(1).getR().toString());
+                                intent.putExtra("Wickets2", model.getScore().get(1).getW().toString());
+                                intent.putExtra("Overs2", model.getScore().get(1).getO().toString());
+                            }
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -130,7 +133,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                            //intent.putExtra("")
+                      //      intent.putExtra("Extras1",);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
