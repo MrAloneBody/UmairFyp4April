@@ -20,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.umairfyp.model.Batsman_data.Batting;
+import com.example.umairfyp.model.Batsman_data.Model_Batsman;
 import com.example.umairfyp.model.Batsman_data.Scorecard;
 import com.example.umairfyp.network.RetrofitClient;
 import com.google.android.material.tabs.TabLayout;
@@ -34,7 +35,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
    // String url = "https://api.cricapi.com/v1/match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id";
     String apikey = "7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f";
-    Scorecard scorecard_model;
+    Model_Batsman scorecard_model;
     RecyclerView rv1stbat,rv2ndbat,rv1stbowl,rv2ndbowl;
 
 
@@ -46,7 +47,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
         rv1stbat = findViewById(R.id.rv_1stBat);
         rv1stbat.setLayoutManager(new LinearLayoutManager(this));
- /*       rv2ndbat = findViewById(R.id.rv_2ndBat);
+        rv2ndbat = findViewById(R.id.rv_2ndBat);
         rv2ndbat.setHasFixedSize(true);
         rv2ndbat.setLayoutManager(new LinearLayoutManager(this));
         rv1stbowl = findViewById(R.id.rv_1stBowl);
@@ -55,41 +56,48 @@ public class MatchSummaryActivity extends AppCompatActivity {
         rv2ndbowl = findViewById(R.id.rv_2ndBowl);
         rv2ndbowl.setHasFixedSize(true);
         rv2ndbowl.setLayoutManager(new LinearLayoutManager(this));
-*/
+
 
 
         Intent intent = getIntent();
-        String uniqueId = intent.getStringExtra("match_id");
+        String id = intent.getStringExtra("match_id");
 
-        RetrofitClient.getInstance().getServices().getScorecard(apikey, uniqueId).enqueue(new Callback<Scorecard>() {
+        RetrofitClient.getInstance().getServices().getScorecard(id).enqueue(new Callback<Model_Batsman>() {
             @Override
-            public void onResponse(Call<Scorecard> call, retrofit2.Response<Scorecard> response) {
+            public void onResponse(Call<Model_Batsman> call, retrofit2.Response<Model_Batsman> response) {
 
                  scorecard_model = response.body();
+                Log.d("firstadapterbat", "onResponse: ");
                 if(scorecard_model != null){
-                    BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.getBatting());
+                    BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.getData().getScorecard().get(0).getBatting());
                     rv1stbat.setAdapter(batsmanAdapter);
                 }
-      /*         if(scorecard_model != null){
-                    BatsmanAdapter2 batsmanAdapter2 = new BatsmanAdapter2 (scorecard_model.getBatting());
+                Log.d("2ndadapterbat", "onResponse: ");
+
+                if(scorecard_model != null){
+                    BatsmanAdapter2 batsmanAdapter2 = new BatsmanAdapter2 (scorecard_model.getData().getScorecard().get(1).getBatting());
                     rv2ndbat.setAdapter(batsmanAdapter2);
 
                 }
+                Log.d("firstadapterbowl", "onResponse: ");
+
                 if(scorecard_model != null){
-                    BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getBowling());
+                    BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
                     rv1stbowl.setAdapter(bowlerAdapter);
 
                 }
+                Log.d("2ndadapterbowl", "onResponse: ");
+
                 if(scorecard_model != null){
-                    BowlerAdapter2 bowlerAdapter2 = new BowlerAdapter2 (scorecard_model.getBowling());
+                    BowlerAdapter2 bowlerAdapter2 = new BowlerAdapter2 (scorecard_model.getData().getScorecard().get(1).getBowling());
                     rv1stbowl.setAdapter(bowlerAdapter2);
 
                 }
-*/
+
             }
 
             @Override
-            public void onFailure(Call<Scorecard> call, Throwable t) {
+            public void onFailure(Call<Model_Batsman> call, Throwable t) {
 
             }
         });

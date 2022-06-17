@@ -152,7 +152,8 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_1stBat"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    >
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -221,13 +222,13 @@
                 </TableLayout>
 
         <!--2nd recycler view for bowl 1st-->
- <!--               <androidx.recyclerview.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_1stBowl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
--->
+
            <!--Extras view  -->
 
                 <TextView
@@ -349,13 +350,13 @@
 -->
 
             <!--3rd recycler view for bat 2nd -->
-        <!--        <androidx.recyclerview.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_2ndBat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
--->
+
                 <TextView
                     android:id="@+id/bowlT2TitleTv"
                     android:layout_width="match_parent"
@@ -428,13 +429,13 @@
 
 -->
             <!--4th recycler view for bowl 2nd-->
-        <!--        <androidx.recyclerview.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_2ndBowl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
--->
+
                 <!--Extras view  -->
 
                 <TextView

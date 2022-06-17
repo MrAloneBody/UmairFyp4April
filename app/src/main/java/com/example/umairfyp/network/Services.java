@@ -1,6 +1,7 @@
 package com.example.umairfyp.network;
 
 
+import com.example.umairfyp.model.Batsman_data.Model_Batsman;
 import com.example.umairfyp.model.Batsman_data.Scorecard;
 import com.example.umairfyp.model.Model;
 import com.example.umairfyp.model.players_list.Player;
@@ -21,10 +22,9 @@ public interface Services {
            @Query("offset") int pageNumber
     );
 
-    @GET("match_scorecard")
-    Call<Scorecard> getScorecard(
-            @Query("apikey") String apikey,
-            @Query("matchId") String matchId
+    @GET("match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f")
+    Call<Model_Batsman> getScorecard(
+            @Query("id") String id
     );
 
 
