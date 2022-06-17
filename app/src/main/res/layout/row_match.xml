@@ -81,6 +81,7 @@
                 android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textColor="#000">
             </TextView>
 
@@ -100,6 +101,7 @@
                 android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textColor="#000">
             </TextView>
 
@@ -121,6 +123,7 @@
                 android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textColor="#000" >
             </TextView>
 

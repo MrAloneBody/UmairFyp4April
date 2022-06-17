@@ -121,7 +121,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             //Players list is clicked
                             int team1players,team2players;
 
-                            Intent intent = new Intent(context, PlayersActivity.class);
+                            Intent intent = new Intent(context, PlayersListActivity.class);
                             intent.putExtra("match_id",match_id);
                             intent.putExtra("Team1",model.getTeams().get(0));
                             intent.putExtra("Team2",model.getTeams().get(1));

@@ -1,14 +1,12 @@
 package com.example.umairfyp
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowPlayersBinding
 import com.example.umairfyp.model.players_list.Data
-import com.example.umairfyp.model.players_list.Player
 
-class PlayersListAdapter(private var playersList: List<Data>) : RecyclerView.Adapter<PlayersListAdapter.ViewHolder>(){
+class PlayerListAdapter2nd(private var playersList: List<Data>) : RecyclerView.Adapter<PlayerListAdapter2nd.ViewHolder>(){
 
     class ViewHolder (val binding: RowPlayersBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -18,7 +16,7 @@ class PlayersListAdapter(private var playersList: List<Data>) : RecyclerView.Ada
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = playersList[position]
-        holder.binding.tvPlayerName.text = player.name
+        holder.binding.playerName.text = player.name
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 
