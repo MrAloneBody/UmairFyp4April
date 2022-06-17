@@ -92,14 +92,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
                           //  intent.putExtra("match_id",match_id);
+
                             intent.putExtra("date",date);
                             intent.putExtra("Team1",model.getTeams().get(0));
-                            intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("MatchStatus",model.getStatus());
-                            intent.putExtra("Wickets1",model.getScore().get(0).getW().toString());
-                            intent.putExtra("Overs1",model.getScore().get(0).getO().toString());
 
+                            if(model.getStatus()!="Match not started") {
+                                intent.putExtra("Score1", model.getScore().get(0).getR().toString());
+                                intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
+                                intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
+                            }
                             int inning_size=model.getScore().size();
 
                             if( inning_size >1 ) {

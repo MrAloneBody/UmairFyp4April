@@ -22,11 +22,11 @@ class BowlerAdapter(private var scorecard: MutableList<Bowling>) : RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = scorecard[position]
-    //    holder.binding.BowlersName.text = player.bowling[0].bowler.name
-     //   holder.binding.BowlersOvers.text = player.bowling[0].o.toString()
-    //    holder.binding.BowlersScore.text = player.bowling[0].r.toString()
-    //    holder.binding.BowlersRR.text = player.bowling[0].eco.toString()
-     //   holder.binding.wicketsTaken.text = player.bowling[0].w.toString()
+        holder.binding.BowlersName.text = player.bowler.name
+        holder.binding.BowlersOvers.text = player.o.toString()
+        holder.binding.BowlersScore.text = player.r.toString()
+        holder.binding.BowlersRR.text = player.eco.toString()
+        holder.binding.wicketsTaken.text = player.w.toString()
 
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }

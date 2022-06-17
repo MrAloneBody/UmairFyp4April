@@ -25,10 +25,10 @@ class BatsmanAdapter(private var scorecard: List<Batting>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var player = scorecard[position]
         holder.binding.BatsmanName.text = player.batsman.name
-   //     holder.binding.Dismissal.text = player.dismissalText
-    //    holder.binding.BatsmanScore.text = player.r.toString()
-    //    holder.binding.BatsmanBowlsFaced.text = player.b.toString()
-    //    holder.binding.BatsmanSr.text = player.sr.toString()
+        holder.binding.Dismissal.text = player.dismissalText
+        holder.binding.BatsmanScore.text = player.r.toString()
+        holder.binding.BatsmanBowlsFaced.text = player.b.toString()
+        holder.binding.BatsmanSr.text = player.sr.toString()
 
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }

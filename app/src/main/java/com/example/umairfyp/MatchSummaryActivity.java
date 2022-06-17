@@ -33,7 +33,6 @@ import retrofit2.Callback;
 
 public class MatchSummaryActivity extends AppCompatActivity {
 
-   // String url = "https://api.cricapi.com/v1/match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&id";
     String apikey = "7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f";
     Model_Batsman scorecard_model;
     RecyclerView rv1stbat,rv2ndbat,rv1stbowl,rv2ndbowl;
@@ -46,16 +45,21 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
 
         rv1stbat = findViewById(R.id.rv_1stBat);
+        rv1stbat.setHasFixedSize(true);
         rv1stbat.setLayoutManager(new LinearLayoutManager(this));
+
         rv2ndbat = findViewById(R.id.rv_2ndBat);
         rv2ndbat.setHasFixedSize(true);
         rv2ndbat.setLayoutManager(new LinearLayoutManager(this));
+
         rv1stbowl = findViewById(R.id.rv_1stBowl);
         rv1stbowl.setHasFixedSize(true);
         rv1stbowl.setLayoutManager(new LinearLayoutManager(this));
+
         rv2ndbowl = findViewById(R.id.rv_2ndBowl);
         rv2ndbowl.setHasFixedSize(true);
         rv2ndbowl.setLayoutManager(new LinearLayoutManager(this));
+
 
 
 
@@ -67,27 +71,20 @@ public class MatchSummaryActivity extends AppCompatActivity {
             public void onResponse(Call<Model_Batsman> call, retrofit2.Response<Model_Batsman> response) {
 
                  scorecard_model = response.body();
-                Log.d("firstadapterbat", "onResponse: ");
                 if(scorecard_model != null){
                     BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.getData().getScorecard().get(0).getBatting());
                     rv1stbat.setAdapter(batsmanAdapter);
                 }
-                Log.d("2ndadapterbat", "onResponse: ");
-
-                if(scorecard_model != null){
+              if(scorecard_model != null){
                     BatsmanAdapter2 batsmanAdapter2 = new BatsmanAdapter2 (scorecard_model.getData().getScorecard().get(1).getBatting());
                     rv2ndbat.setAdapter(batsmanAdapter2);
 
                 }
-                Log.d("firstadapterbowl", "onResponse: ");
-
                 if(scorecard_model != null){
                     BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
                     rv1stbowl.setAdapter(bowlerAdapter);
 
                 }
-                Log.d("2ndadapterbowl", "onResponse: ");
-
                 if(scorecard_model != null){
                     BowlerAdapter2 bowlerAdapter2 = new BowlerAdapter2 (scorecard_model.getData().getScorecard().get(1).getBowling());
                     rv1stbowl.setAdapter(bowlerAdapter2);
