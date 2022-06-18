@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview"
-    app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#D2D3DD"
     app:cardCornerRadius="15dp"
     app:cardElevation="1dp"
-    >
+    app:cardUseCompatPadding="true">
 
     <TableLayout
         android:id="@+id/tl_main_layout"
@@ -18,18 +17,17 @@
         android:stretchColumns="2">
 
         <TableRow>
-<!--
+            <!--
 
 -->
             <TextView
                 android:id="@+id/team1tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="30dp"
                 android:textColor="#000"
-                >
-            </TextView>
+                android:textSize="30dp"
+                android:textStyle="bold"></TextView>
+
             <TextView
                 android:id="@+id/TeamScore1tv"
                 android:layout_width="match_parent"
@@ -43,31 +41,32 @@
         </TableRow>
 
         <TableRow>
-      <!--
+            <!--
 -->
             <TextView
                 android:id="@+id/team2tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:textColor="#000"
                 android:textSize="30dp"
-                android:textColor="#000" >
+                android:textStyle="bold">
 
             </TextView>
+
             <TextView
                 android:id="@+id/TeamScore2tv"
-                android:textColor="#000"
                 android:layout_width="match_parent"
-                android:paddingLeft="5dp"
                 android:layout_height="wrap_content"
-                android:layout_column="0">
+                android:layout_column="0"
+                android:paddingLeft="5dp"
+                android:textColor="#000">
 
             </TextView>
 
         </TableRow>
 
         <TableRow>
-          <!--  <TextView
+            <!--  <TextView
                 android:text="Match Status      :   "
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -78,16 +77,16 @@
 -->
             <TextView
                 android:id="@+id/matchstatustv"
-                android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
                 android:textAlignment="center"
-                android:textColor="#000">
-            </TextView>
+                android:textColor="#000"></TextView>
 
         </TableRow>
+
         <TableRow>
-          <!--  <TextView
+            <!--  <TextView
                 android:text="Date                      :    "
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -98,12 +97,11 @@
 -->
             <TextView
                 android:id="@+id/datetv"
-                android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
                 android:textAlignment="center"
-                android:textColor="#000">
-            </TextView>
+                android:textColor="#000"></TextView>
 
         </TableRow>
 
@@ -120,15 +118,13 @@
       -->
             <TextView
                 android:id="@+id/matchtypetv"
-                android:paddingLeft="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
                 android:textAlignment="center"
-                android:textColor="#000" >
-            </TextView>
+                android:textColor="#000"></TextView>
 
         </TableRow>
-
 
 
     </TableLayout>

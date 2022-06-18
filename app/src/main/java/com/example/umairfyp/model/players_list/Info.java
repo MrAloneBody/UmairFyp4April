@@ -20,15 +20,6 @@ public class Info {
     @SerializedName("server")
     @Expose
     private Integer server;
-    @SerializedName("offsetRows")
-    @Expose
-    private Integer offsetRows;
-    @SerializedName("cache")
-    @Expose
-    private Integer cache;
-    @SerializedName("totalRows")
-    @Expose
-    private Integer totalRows;
     @SerializedName("queryTime")
     @Expose
     private Double queryTime;
@@ -74,30 +65,6 @@ public class Info {
 
     public void setServer(Integer server) {
         this.server = server;
-    }
-
-    public Integer getOffsetRows() {
-        return offsetRows;
-    }
-
-    public void setOffsetRows(Integer offsetRows) {
-        this.offsetRows = offsetRows;
-    }
-
-    public Integer getCache() {
-        return cache;
-    }
-
-    public void setCache(Integer cache) {
-        this.cache = cache;
-    }
-
-    public Integer getTotalRows() {
-        return totalRows;
-    }
-
-    public void setTotalRows(Integer totalRows) {
-        this.totalRows = totalRows;
     }
 
     public Double getQueryTime() {
