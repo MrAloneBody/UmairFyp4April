@@ -82,7 +82,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                 String match_id = model.getId();
                 String  date= model.getDate();
-                String Extras1 = score_model.getData().getScorecard().get(0).getExtras().getR();
+//                String BatTeam1 = score_model.getData().getScorecard().get(0).getInning();
 
                 //options to Display in dialog
                 String[] options= {"Match Details","Players List","Match Summary"};
@@ -105,13 +105,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("MatchStatus",model.getStatus());
 
-                            if(model.getStatus()!="Match not started") {
+                            int inning_size=model.getScore().size();
+                            if(inning_size >0) {
                                 intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                                 intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
                                 intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
                             }
 
-                            int inning_size=model.getScore().size();
+
 
                             if( inning_size >1 ) {
                                 intent.putExtra("Score2", model.getScore().get(1).getR().toString());
@@ -143,7 +144,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                            intent.putExtra("Extras1",Extras1.toString());
+                      //      intent.putExtra("Team1",BatTeam1);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);

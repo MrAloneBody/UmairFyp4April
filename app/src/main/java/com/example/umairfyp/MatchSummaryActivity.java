@@ -64,11 +64,11 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("match_id");
-        String extra1 = intent.getStringExtra("Extras1");
+     //   String Team1 = intent.getStringExtra("Team1");
 
-        ExtraTv1=findViewById(R.id.extra_1stinning);
+     //   BatTeam1Tv=findViewById(R.id.BatTeamName1);
 
-        ExtraTv1.setText(extra1);
+     //   BatTeam1Tv.setText(Team1);
 
 
 
@@ -77,24 +77,25 @@ public class MatchSummaryActivity extends AppCompatActivity {
             public void onResponse(Call<Model_Batsman> call, retrofit2.Response<Model_Batsman> response) {
 
                  scorecard_model = response.body();
-                if(scorecard_model != null){
-                    BatsmanAdapter batsmanAdapter = new BatsmanAdapter (scorecard_model.getData().getScorecard().get(0).getBatting());
-                    rv1stbat.setAdapter(batsmanAdapter);
+                if(scorecard_model.getData().getScorecard().size()>0) {
+                    if (scorecard_model != null) {
+                        BatsmanAdapter batsmanAdapter = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(0).getBatting());
+                        rv1stbat.setAdapter(batsmanAdapter);
+                    }
+                    if(scorecard_model != null){
+                        BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
+                        rv1stbowl.setAdapter(bowlerAdapter);
+                    }
                 }
-              if(scorecard_model != null){
-                    BatsmanAdapter batsmanAdapter2 = new BatsmanAdapter (scorecard_model.getData().getScorecard().get(1).getBatting());
-                    rv2ndbat.setAdapter(batsmanAdapter2);
-
-                }
-                if(scorecard_model != null){
-                    BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
-                    rv1stbowl.setAdapter(bowlerAdapter);
-
-                }
-                if(scorecard_model != null){
-                    BowlerAdapter bowlerAdapter2 = new BowlerAdapter (scorecard_model.getData().getScorecard().get(1).getBowling());
-                    rv2ndbowl.setAdapter(bowlerAdapter2);
-
+                if(scorecard_model.getData().getScorecard().size()>1) {
+                    if (scorecard_model != null) {
+                        BatsmanAdapter batsmanAdapter2 = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(1).getBatting());
+                        rv2ndbat.setAdapter(batsmanAdapter2);
+                    }
+                    if (scorecard_model != null) {
+                        BowlerAdapter bowlerAdapter2 = new BowlerAdapter(scorecard_model.getData().getScorecard().get(1).getBowling());
+                        rv2ndbowl.setAdapter(bowlerAdapter2);
+                    }
                 }
 
             }
@@ -102,7 +103,6 @@ public class MatchSummaryActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Model_Batsman> call, Throwable t) {
 
-                Toast.makeText(MatchSummaryActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

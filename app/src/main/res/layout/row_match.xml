@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#D2D3DD"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="30dp"
     app:cardElevation="1dp"
     app:cardUseCompatPadding="true">
 
@@ -26,7 +26,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:textSize="30dp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/TeamScore1tv"
