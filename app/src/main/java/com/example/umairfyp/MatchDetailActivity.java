@@ -65,8 +65,6 @@ public class MatchDetailActivity extends AppCompatActivity {
         String Overs2 = intent.getStringExtra("Overs2");
 
 
-        //    url = url + id;
-
         mTeam1Tv = findViewById(R.id.team1tv);
         mTeam2Tv = findViewById(R.id.team2tv);
         mMatchStatusTv = findViewById(R.id.matchstatustv);

@@ -33,10 +33,10 @@ import retrofit2.Callback;
 
 public class MatchSummaryActivity extends AppCompatActivity {
 
-    String apikey = "7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f";
     Model_Batsman scorecard_model;
     RecyclerView rv1stbat,rv2ndbat,rv1stbowl,rv2ndbowl;
 
+    TextView BatTeam1Tv,BatTeam2Tv,BowlTeam1Tv,BowlTeam2Tv,ExtraTv1,ExtraTv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +62,15 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
 
 
-
         Intent intent = getIntent();
         String id = intent.getStringExtra("match_id");
+        String extra1 = intent.getStringExtra("Extras1");
+
+        ExtraTv1=findViewById(R.id.extra_1stinning);
+
+        ExtraTv1.setText(extra1);
+
+
 
         RetrofitClient.getInstance().getServices().getScorecard(id).enqueue(new Callback<Model_Batsman>() {
             @Override
@@ -76,7 +82,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
                     rv1stbat.setAdapter(batsmanAdapter);
                 }
               if(scorecard_model != null){
-                    BatsmanAdapter2 batsmanAdapter2 = new BatsmanAdapter2 (scorecard_model.getData().getScorecard().get(1).getBatting());
+                    BatsmanAdapter batsmanAdapter2 = new BatsmanAdapter (scorecard_model.getData().getScorecard().get(1).getBatting());
                     rv2ndbat.setAdapter(batsmanAdapter2);
 
                 }
@@ -86,8 +92,8 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
                 }
                 if(scorecard_model != null){
-                    BowlerAdapter2 bowlerAdapter2 = new BowlerAdapter2 (scorecard_model.getData().getScorecard().get(1).getBowling());
-                    rv1stbowl.setAdapter(bowlerAdapter2);
+                    BowlerAdapter bowlerAdapter2 = new BowlerAdapter (scorecard_model.getData().getScorecard().get(1).getBowling());
+                    rv2ndbowl.setAdapter(bowlerAdapter2);
 
                 }
 
@@ -96,6 +102,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Model_Batsman> call, Throwable t) {
 
+                Toast.makeText(MatchSummaryActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

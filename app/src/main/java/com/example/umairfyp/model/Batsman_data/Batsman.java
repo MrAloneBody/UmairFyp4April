@@ -1,6 +1,5 @@
 package com.example.umairfyp.model.Batsman_data;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

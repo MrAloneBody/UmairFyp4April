@@ -17,7 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.umairfyp.model.Batsman_data.Extras;
+import com.example.umairfyp.model.Batsman_data.Model_Batsman;
+import com.example.umairfyp.model.Batsman_data.Scorecard;
 import com.example.umairfyp.model.Data;
+import com.example.umairfyp.model.players_list.PlayersList;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,6 +30,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     //variables
 
+    Model_Batsman score_model;
     private List<Data> modelList;
     private Context context;
     String match_id;
@@ -56,6 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         //this will bind the data to view holder from where it'll be shown in other groups
         Data model= modelList.get(position);
+
         match_id = model.getId();
         holder.team1tv.setText(model.getTeams().get(0));
         holder.team2tv.setText(model.getTeams().get(1));
@@ -76,6 +82,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                 String match_id = model.getId();
                 String  date= model.getDate();
+                String Extras1 = score_model.getData().getScorecard().get(0).getExtras().getR();
 
                 //options to Display in dialog
                 String[] options= {"Match Details","Players List","Match Summary"};
@@ -103,6 +110,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                                 intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
                                 intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
                             }
+
                             int inning_size=model.getScore().size();
 
                             if( inning_size >1 ) {
@@ -119,7 +127,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                         if (which ==1){
                             //Players list is clicked
-                            int team1players,team2players;
 
                             Intent intent = new Intent(context, PlayersListActivity.class);
                             intent.putExtra("match_id",match_id);
@@ -136,7 +143,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                      //      intent.putExtra("Extras1",);
+                            intent.putExtra("Extras1",Extras1.toString());
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -163,7 +170,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         //define view objects
 
-        TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2;
+        TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2,Extra1;
         CardView cardView;
         TableLayout mainLayout;
 

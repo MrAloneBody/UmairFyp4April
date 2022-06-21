@@ -12,11 +12,11 @@
 
     <TableLayout
 
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="5dp"
         android:stretchColumns="*"
-
         >
 
 
@@ -24,10 +24,10 @@
 <!--for payer name-->
             <TextView
                 android:id="@+id/Batsman_name"
-                android:hint="name"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_column="0"
+                android:hint="name"
                 android:padding="10dp"
                 android:textColor="#000">
 
@@ -38,7 +38,7 @@
             <TextView
                 android:id="@+id/Batsman_score"
                 android:hint="Score"
-                android:layout_width="match_parent"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:padding="10dp"
@@ -51,7 +51,7 @@
             <TextView
                 android:id="@+id/Batsman_bowls_faced"
                 android:hint="Balls faced"
-                android:layout_width="match_parent"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:padding="10dp"
@@ -64,7 +64,7 @@
             <TextView
                 android:id="@+id/Batsman_sr"
                 android:hint="SR"
-                android:layout_width="match_parent"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_column="3"
                 android:padding="10dp"
@@ -76,14 +76,15 @@
         </TableRow>
         <TableRow>
 
-            <!--For name of bowler-->
+            <!--For Dismissal-->
 
             <TextView
                 android:id="@+id/Dismissal"
                 android:hint="Dismissal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="10dp"
+                android:textAlignment="center"
                 android:textColor="#000">
 
             </TextView>

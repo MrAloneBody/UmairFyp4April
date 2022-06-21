@@ -35,7 +35,7 @@
                     android:text="1st inning"/>
 
                 <TextView
-                    android:id="@+id/fieldT1TitleTv"
+                    android:id="@+id/BatTeamName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bat Team Name"
@@ -54,7 +54,7 @@
                     <TableRow>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_column="0"
                             android:padding="10dp"
@@ -64,7 +64,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="1"
                             android:padding="10dp"
@@ -74,7 +74,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
@@ -83,7 +83,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="3"
                             android:padding="10dp"
@@ -158,7 +158,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
-                    android:id="@+id/fieldT2TitleTv"
+                    android:id="@+id/BowlTeamName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bowling Team name"
@@ -192,7 +192,7 @@
                             android:layout_column="1"
                             android:padding="10dp"
 
-                            android:text="Score"
+                            android:text="Overs"
                             android:textColor="#000">
 
                         </TextView>
@@ -201,7 +201,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
-                            android:text="Overs"
+                            android:text="Score"
                             android:textColor="#000">
 
                         </TextView>
@@ -211,6 +211,16 @@
                             android:layout_column="3"
                             android:padding="10dp"
                             android:text="RR"
+                            android:textColor="#000">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_column="3"
+                            android:padding="10dp"
+                            android:text="Wickets"
                             android:textColor="#000">
 
                         </TextView>
@@ -278,7 +288,7 @@
                     android:text="2nd Inning"/>
 
                 <TextView
-                    android:id="@+id/bowlT1TitleTv"
+                    android:id="@+id/BatTeamName2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bat Team Name"
@@ -298,7 +308,7 @@
                     <TableRow>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_column="0"
                             android:padding="10dp"
@@ -308,7 +318,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="1"
                             android:padding="10dp"
@@ -318,7 +328,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
@@ -327,7 +337,7 @@
 
                         </TextView>
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="3"
                             android:padding="10dp"
@@ -358,7 +368,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
-                    android:id="@+id/bowlT2TitleTv"
+                    android:id="@+id/BowlTeamName2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bowl Team Name"
@@ -382,7 +392,7 @@
                             android:layout_column="0"
                             android:padding="10dp"
 
-                            android:text="Player Name "
+                            android:text="Player Name"
                             android:textColor="#000">
 
                         </TextView>
@@ -392,7 +402,7 @@
                             android:layout_column="1"
                             android:padding="10dp"
 
-                            android:text="Score"
+                            android:text="Over"
                             android:textColor="#000">
 
                         </TextView>
@@ -401,7 +411,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
-                            android:text="Overs"
+                            android:text="Run"
                             android:textColor="#000">
 
                         </TextView>
@@ -411,6 +421,15 @@
                             android:layout_column="3"
                             android:padding="10dp"
                             android:text="RR"
+                            android:textColor="#000">
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_column="3"
+                            android:padding="10dp"
+                            android:text="Wkts"
                             android:textColor="#000">
 
                         </TextView>

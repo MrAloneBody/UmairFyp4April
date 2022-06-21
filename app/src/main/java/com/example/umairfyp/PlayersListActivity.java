@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.umairfyp.model.players_list.PlayersList;
@@ -33,12 +34,14 @@ public class PlayersListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String id= intent.getStringExtra("match_id");
+      //  String Team1= intent.getStringExtra("Team1");
+     //   String Team2 = intent.getStringExtra("Team2");
 
         team1tv=findViewById(R.id.PlayerTeamName1);
         team2tv=findViewById(R.id.PlayerTeamName2);
 
-        team1tv.setText(playerModel.getData().get(0).getTeamName());
-        team2tv.setText(playerModel.getData().get(1).getTeamName());
+    //    team1tv.setText(playerModel.getData().get(0).getTeamName());
+    //    team2tv.setText(playerModel.getData().get(1).getTeamName());
 
 
         RetrofitClient.getInstance().getServices().getPlayersList(id).enqueue(new Callback<PlayersList>() {

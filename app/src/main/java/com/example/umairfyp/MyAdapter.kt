@@ -1,10 +1,9 @@
 package com.example.umairfyp
-
+/*
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.umairfyp.databinding.RowMatchBinding
 import com.example.umairfyp.model.Data
 
 class MyAdapter(var context: Context, var myList:List<Data>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
@@ -38,3 +37,4 @@ class MyAdapter(var context: Context, var myList:List<Data>) : RecyclerView.Adap
         mListener = onItemClick
     }
 }
+*/

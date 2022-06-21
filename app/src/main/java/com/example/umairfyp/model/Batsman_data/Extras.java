@@ -7,7 +7,7 @@ public class Extras {
 
     @SerializedName("r")
     @Expose
-    private Integer r;
+    private String r;
     @SerializedName("b")
     @Expose
     private Integer b;
@@ -24,11 +24,11 @@ public class Extras {
     @Expose
     private Integer p;
 
-    public Integer getR() {
+    public String getR() {
         return r;
     }
 
-    public void setR(Integer r) {
+    public void setR(String r) {
         this.r = r;
     }
 
