@@ -46,19 +46,21 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="5dp"
                     android:stretchColumns="*"
+
                     >
 
 
                     <TableRow>
 
                         <TextView
+
                             android:layout_width="130dp"
                             android:layout_height="match_parent"
                             android:layout_column="0"
-                            android:padding="10dp"
+                            android:background="#7289da"
 
+                            android:padding="10dp"
                             android:text="Player Name "
                             android:textColor="#000">
 
@@ -68,6 +70,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="1"
                             android:padding="10dp"
+                            android:background="#7289da"
 
                             android:text="Score"
                             android:textColor="#000">
@@ -79,6 +82,8 @@
                             android:layout_column="2"
                             android:padding="10dp"
                             android:text="Balls"
+                            android:background="#7289da"
+
                             android:textColor="#000">
 
                         </TextView>
@@ -88,6 +93,8 @@
                             android:layout_column="3"
                             android:padding="10dp"
                             android:text="Sr"
+                            android:background="#7289da"
+
                             android:textColor="#000">
 
                         </TextView>
@@ -180,8 +187,9 @@
                             android:layout_width="130dp"
                             android:layout_height="match_parent"
                             android:layout_column="0"
-                            android:padding="10dp"
+                            android:background="#ac3dbc"
 
+                            android:padding="10dp"
                             android:text="Player Name "
                             android:textColor="#000">
 
@@ -190,6 +198,8 @@
                             android:layout_width="50dp"
                             android:layout_height="match_parent"
                             android:layout_column="1"
+                            android:background="#ac3dbc"
+
                             android:padding="10dp"
 
                             android:text="Overs"
@@ -201,6 +211,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
                             android:text="Score"
                             android:textColor="#000">
 
@@ -210,6 +222,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="3"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
                             android:text="RR"
                             android:textColor="#000">
 
@@ -221,6 +235,8 @@
                             android:layout_column="3"
                             android:padding="10dp"
                             android:text="Wickets"
+                            android:background="#ac3dbc"
+
                             android:textColor="#000">
 
                         </TextView>
@@ -312,6 +328,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="0"
                             android:padding="10dp"
+                            android:background="#7289da"
 
                             android:text="Player Name "
                             android:textColor="#000">
@@ -322,6 +339,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="1"
                             android:padding="10dp"
+                            android:background="#7289da"
 
                             android:text="Score"
                             android:textColor="#000">
@@ -333,6 +351,8 @@
                             android:layout_column="2"
                             android:padding="10dp"
                             android:text="Balls"
+                            android:background="#7289da"
+
                             android:textColor="#000">
 
                         </TextView>
@@ -342,6 +362,8 @@
                             android:layout_column="3"
                             android:padding="10dp"
                             android:text="Sr"
+                            android:background="#7289da"
+
                             android:textColor="#000">
 
                         </TextView>
@@ -391,6 +413,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="0"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
 
                             android:text="Player Name"
                             android:textColor="#000">
@@ -401,6 +425,7 @@
                             android:layout_height="match_parent"
                             android:layout_column="1"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
 
                             android:text="Over"
                             android:textColor="#000">
@@ -411,6 +436,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="2"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
                             android:text="Run"
                             android:textColor="#000">
 
@@ -420,6 +447,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="3"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
                             android:text="RR"
                             android:textColor="#000">
 
@@ -429,6 +458,8 @@
                             android:layout_height="match_parent"
                             android:layout_column="3"
                             android:padding="10dp"
+                            android:background="#ac3dbc"
+
                             android:text="Wkts"
                             android:textColor="#000">
 

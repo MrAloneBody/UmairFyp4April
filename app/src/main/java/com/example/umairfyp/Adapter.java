@@ -82,7 +82,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                 String match_id = model.getId();
                 String  date= model.getDate();
-//                String BatTeam1 = score_model.getData().getScorecard().get(0).getInning();
+         //       String BatTeam1 = score_model.getData().getScorecard().get(0).getInning();
 
                 //options to Display in dialog
                 String[] options= {"Match Details","Players List","Match Summary"};
@@ -144,7 +144,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                      //      intent.putExtra("Team1",BatTeam1);
+                       //     intent.putExtra("Team1",BatTeam1);
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
