@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ import retrofit2.Callback;
 
 public class MatchSummaryActivity extends AppCompatActivity {
 
+
     Model_Batsman scorecard_model;
     RecyclerView rv1stbat,rv2ndbat,rv1stbowl,rv2ndbowl;
 
@@ -43,6 +45,16 @@ public class MatchSummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_summary);
 
+
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("match_id");
+      //  String Team1 = intent.getStringExtra("Team1");
+
+        //   BatTeam1Tv=findViewById(R.id.BatTeamName1);
+
+        //   BatTeam1Tv.setText(Team1);
+
+        // Binding the text views
 
         rv1stbat = findViewById(R.id.rv_1stBat);
         rv1stbat.setHasFixedSize(true);
@@ -59,17 +71,6 @@ public class MatchSummaryActivity extends AppCompatActivity {
         rv2ndbowl = findViewById(R.id.rv_2ndBowl);
         rv2ndbowl.setHasFixedSize(true);
         rv2ndbowl.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-        Intent intent = getIntent();
-        String id = intent.getStringExtra("match_id");
-     //   String Team1 = intent.getStringExtra("Team1");
-
-     //   BatTeam1Tv=findViewById(R.id.BatTeamName1);
-
-     //   BatTeam1Tv.setText(Team1);
-
 
 
         RetrofitClient.getInstance().getServices().getScorecard(id).enqueue(new Callback<Model_Batsman>() {

@@ -47,15 +47,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup , int position) {
 
-        //this method will be called whenever our view holder will be created
-        //inflate the layout row.xml
-
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_match, viewGroup , false);
 
         return new ViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
+  //  @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -72,7 +69,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         holder.matchstatustv.setText(model.getStatus());
 
         holder.datetv.setText(model.getDate());
-
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +100,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("Team1",model.getTeams().get(0));
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("MatchStatus",model.getStatus());
+                            intent.putExtra("innings_size",model.getScore().size());
 
                             int inning_size=model.getScore().size();
                             if(inning_size >0) {
@@ -144,7 +141,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                       //     intent.putExtra("Team1",BatTeam1);
+//                            intent.putExtra("Team1",score_model.getData().getScorecard().get(0).getExtras().toString());
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -171,7 +168,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         //define view objects
 
-        TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2,Extra1;
+        TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2;
         CardView cardView;
         TableLayout mainLayout;
 

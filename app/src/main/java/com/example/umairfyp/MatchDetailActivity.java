@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.umairfyp.model.Batsman_data.Model_Batsman;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
 
@@ -27,10 +29,7 @@ public class MatchDetailActivity extends AppCompatActivity {
 
 
     TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv,mWickets1Tv,mOvers1Tv,mWickets2Tv,mOvers2Tv;
-
-    // we will get unique id of the match from on click(intent)
-
-
+    TextView slash1,slash2,sp1,sp2,ep1,ep2;
     private String url= "https://api.cricapi.com/v1/match_info?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0&id=";
 
 
@@ -50,6 +49,14 @@ public class MatchDetailActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        slash1 = findViewById(R.id.Slash1);
+        slash2 = findViewById(R.id.Slash2);
+        ep1 = findViewById(R.id.EP1);
+        ep2 = findViewById(R.id.EP2);
+        sp1 = findViewById(R.id.SP1);
+        sp2 = findViewById(R.id.SP2);
+
+
         //get data from intent (Onclick from previous activity)
         Intent intent = getIntent();
      //   String id= intent.getStringExtra("match_id");
@@ -63,6 +70,19 @@ public class MatchDetailActivity extends AppCompatActivity {
         String Wickets2 = intent.getStringExtra("Wickets2");
         String Overs1 = intent.getStringExtra("Overs1");
         String Overs2 = intent.getStringExtra("Overs2");
+        String inning_size = intent.getStringExtra("innings_size");
+
+        if (inning_size > ) {
+            slash1.setVisibility(View.GONE);
+            ep1.setVisibility(View.GONE);
+            sp1.setVisibility(View.GONE);
+        }
+        if (inning_size > 1) {
+            slash2.setVisibility(View.GONE);
+            ep2.setVisibility(View.GONE);
+            sp2.setVisibility(View.GONE);
+        }
+
 
 
         mTeam1Tv = findViewById(R.id.team1tv);
