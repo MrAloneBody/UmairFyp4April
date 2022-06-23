@@ -50,9 +50,9 @@ public class MatchSummaryActivity extends AppCompatActivity {
         String id = intent.getStringExtra("match_id");
       //  String Team1 = intent.getStringExtra("Team1");
 
-        //   BatTeam1Tv=findViewById(R.id.BatTeamName1);
+        BatTeam1Tv=findViewById(R.id.BatTeamName1);
+        BatTeam2Tv=findViewById(R.id.BatTeamName2);
 
-        //   BatTeam1Tv.setText(Team1);
 
         // Binding the text views
 
@@ -78,26 +78,33 @@ public class MatchSummaryActivity extends AppCompatActivity {
             public void onResponse(Call<Model_Batsman> call, retrofit2.Response<Model_Batsman> response) {
 
                  scorecard_model = response.body();
+
                 if(scorecard_model.getData().getScorecard().size()>0) {
                     if (scorecard_model != null) {
                         BatsmanAdapter batsmanAdapter = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(0).getBatting());
                         rv1stbat.setAdapter(batsmanAdapter);
+                        String Team1=scorecard_model.getData().getScorecard().get(0).getInning();
+                        BatTeam1Tv.setText(Team1);
                     }
                     if(scorecard_model != null){
                         BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
                         rv1stbowl.setAdapter(bowlerAdapter);
+
                     }
                 }
                 if(scorecard_model.getData().getScorecard().size()>1) {
                     if (scorecard_model != null) {
                         BatsmanAdapter batsmanAdapter2 = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(1).getBatting());
                         rv2ndbat.setAdapter(batsmanAdapter2);
+                        String Team2=scorecard_model.getData().getScorecard().get(1).getInning();
+                        BatTeam2Tv.setText(Team2);
                     }
                     if (scorecard_model != null) {
                         BowlerAdapter bowlerAdapter2 = new BowlerAdapter(scorecard_model.getData().getScorecard().get(1).getBowling());
                         rv2ndbowl.setAdapter(bowlerAdapter2);
                     }
                 }
+
 
             }
 

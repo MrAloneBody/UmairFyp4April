@@ -1,5 +1,5 @@
 package com.example.umairfyp
-
+/*
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -46,4 +46,6 @@ class BatsmanAdapter2(private var scorecard: MutableList<Batting>) : RecyclerVie
         mListener = onItemClick
     }
 }
+
+ */
 

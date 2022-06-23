@@ -31,8 +31,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     //variables
 
     Model_Batsman score_model;
+
+
+    //List<Data> from model class to get the data
     private List<Data> modelList;
     private Context context;
+
     String match_id;
     //constructor
 
@@ -101,6 +105,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("MatchStatus",model.getStatus());
                             intent.putExtra("innings_size",model.getScore().size());
+
 
                             int inning_size=model.getScore().size();
                             if(inning_size >0) {

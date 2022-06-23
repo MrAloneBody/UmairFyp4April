@@ -1,6 +1,6 @@
 package com.example.umairfyp;
 
-
+/*
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -117,6 +117,7 @@ public class PlayersActivity extends AppCompatActivity {
                     Toast.makeText(PlayersActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 */
+/*
             }
         }, new Response.ErrorListener() {
             @Override
@@ -140,3 +141,5 @@ public class PlayersActivity extends AppCompatActivity {
     }
 
 }
+
+ */

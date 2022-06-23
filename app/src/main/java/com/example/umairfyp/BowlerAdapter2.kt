@@ -1,5 +1,5 @@
 package com.example.umairfyp
-
+/*
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -45,3 +45,5 @@ class BowlerAdapter2(private var scorecard: MutableList<Bowling>) : RecyclerView
         mListener = onItemClick
     }
 }
+
+ */

@@ -71,7 +71,7 @@ public class MatchDetailActivity extends AppCompatActivity {
         String Overs1 = intent.getStringExtra("Overs1");
         String Overs2 = intent.getStringExtra("Overs2");
         String inning_size = intent.getStringExtra("innings_size");
-
+/*
         if (inning_size > ) {
             slash1.setVisibility(View.GONE);
             ep1.setVisibility(View.GONE);
@@ -83,7 +83,7 @@ public class MatchDetailActivity extends AppCompatActivity {
             sp2.setVisibility(View.GONE);
         }
 
-
+*/
 
         mTeam1Tv = findViewById(R.id.team1tv);
         mTeam2Tv = findViewById(R.id.team2tv);
