@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +38,9 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
     Model_Batsman scorecard_model;
     RecyclerView rv1stbat,rv2ndbat,rv1stbowl,rv2ndbowl;
+    LinearLayout bat2nd;
 
-    TextView BatTeam1Tv,BatTeam2Tv,BowlTeam1Tv,BowlTeam2Tv,ExtraTv1,ExtraTv2;
+    TextView BatTeam1Tv,BatTeam2Tv,ExtraTv1,ExtraTv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,12 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
         BatTeam1Tv=findViewById(R.id.BatTeamName1);
         BatTeam2Tv=findViewById(R.id.BatTeamName2);
+        ExtraTv1 = findViewById(R.id.extra_1stinning);
+        ExtraTv2 = findViewById(R.id.extra_2ndinning);
+
+        bat2nd = findViewById(R.id.inning_2nd);
 
 
-        // Binding the text views
 
         rv1stbat = findViewById(R.id.rv_1stBat);
         rv1stbat.setHasFixedSize(true);
@@ -79,6 +84,8 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
                  scorecard_model = response.body();
 
+
+                 //Setting Adapter with recyclerView and data binding with text views
                 if(scorecard_model.getData().getScorecard().size()>0) {
                     if (scorecard_model != null) {
                         BatsmanAdapter batsmanAdapter = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(0).getBatting());
@@ -89,8 +96,14 @@ public class MatchSummaryActivity extends AppCompatActivity {
                     if(scorecard_model != null){
                         BowlerAdapter bowlerAdapter = new BowlerAdapter (scorecard_model.getData().getScorecard().get(0).getBowling());
                         rv1stbowl.setAdapter(bowlerAdapter);
+                        //For showing Extras of 1st inning
+                        ExtraTv1.setText(scorecard_model.getData().getScorecard().get(0).getExtras().getR());
+
 
                     }
+                }
+                if(scorecard_model.getData().getScorecard().size()<2){
+                    bat2nd.setVisibility(View.GONE);
                 }
                 if(scorecard_model.getData().getScorecard().size()>1) {
                     if (scorecard_model != null) {
@@ -102,6 +115,10 @@ public class MatchSummaryActivity extends AppCompatActivity {
                     if (scorecard_model != null) {
                         BowlerAdapter bowlerAdapter2 = new BowlerAdapter(scorecard_model.getData().getScorecard().get(1).getBowling());
                         rv2ndbowl.setAdapter(bowlerAdapter2);
+
+                        //For showing Extras of 2nd inning
+                        ExtraTv2.setText(scorecard_model.getData().getScorecard().get(1).getExtras().getR());
+
                     }
                 }
 
