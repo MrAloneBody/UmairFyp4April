@@ -82,7 +82,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                 String match_id = model.getId();
                 String  date= model.getDate();
-         //       String BatTeam1 = score_model.getData().getScorecard().get(0).getInning();
 
                 //options to Display in dialog
                 String[] options= {"Match Details","Players List","Match Summary"};
@@ -95,6 +94,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        int inning_size=model.getScore().size();
+
                         if (which ==0){
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
@@ -107,7 +109,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                             intent.putExtra("innings_size",model.getScore().size());
 
 
-                            int inning_size=model.getScore().size();
                             if(inning_size >0) {
                                 intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                                 intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
@@ -120,6 +121,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                                 intent.putExtra("Score2", model.getScore().get(1).getR().toString());
                                 intent.putExtra("Wickets2", model.getScore().get(1).getW().toString());
                                 intent.putExtra("Overs2", model.getScore().get(1).getO().toString());
+                            }
+
+
+                            if(inning_size >2) {
+                                intent.putExtra("Score3", model.getScore().get(2).getR().toString());
+                                intent.putExtra("Wickets3", model.getScore().get(2).getW().toString());
+                                intent.putExtra("Overs3", model.getScore().get(2).getO().toString());
+                            }
+
+
+
+                            if( inning_size >3 ) {
+                                intent.putExtra("Score4", model.getScore().get(3).getR().toString());
+                                intent.putExtra("Wickets4", model.getScore().get(3).getW().toString());
+                                intent.putExtra("Overs4", model.getScore().get(3).getO().toString());
                             }
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -146,7 +162,35 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-//                            intent.putExtra("Team1",score_model.getData().getScorecard().get(0).getExtras().toString());
+
+                            if(inning_size >0) {
+                                intent.putExtra("Score1", model.getScore().get(0).getR().toString());
+                                intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
+                                intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
+                            }
+
+
+
+                            if( inning_size >1 ) {
+                                intent.putExtra("Score2", model.getScore().get(1).getR().toString());
+                                intent.putExtra("Wickets2", model.getScore().get(1).getW().toString());
+                                intent.putExtra("Overs2", model.getScore().get(1).getO().toString());
+                            }
+
+
+                            if(inning_size >2) {
+                                intent.putExtra("Score3", model.getScore().get(2).getR().toString());
+                                intent.putExtra("Wickets3", model.getScore().get(2).getW().toString());
+                                intent.putExtra("Overs3", model.getScore().get(2).getO().toString());
+                            }
+
+
+
+                            if( inning_size >3 ) {
+                                intent.putExtra("Score4", model.getScore().get(3).getR().toString());
+                                intent.putExtra("Wickets4", model.getScore().get(3).getW().toString());
+                                intent.putExtra("Overs4", model.getScore().get(3).getO().toString());
+                            }
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
