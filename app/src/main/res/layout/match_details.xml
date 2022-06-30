@@ -140,7 +140,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:text=")"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000">
+
+                    </TextView>
 
                 </TableRow>
 

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DFDFDF"
+    android:backgroundTint="#DADADA"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -11,7 +13,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#E1E1E1">
 
     </androidx.recyclerview.widget.RecyclerView>
 

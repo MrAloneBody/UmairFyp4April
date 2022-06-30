@@ -21,6 +21,7 @@ class PlayersListAdapter1st(private var playersList: MutableList<Player>) : Recy
         holder.binding.playerName.text = player.name
         holder.binding.battingStyle.text = player.battingStyle
         holder.binding.playerRole.text = player.role
+        holder.binding.playerImg.imageAlpha = player.playerImg.toInt()
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
 
