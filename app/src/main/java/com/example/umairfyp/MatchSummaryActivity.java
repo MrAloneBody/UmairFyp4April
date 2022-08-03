@@ -161,8 +161,11 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
                 //1st inning ScoreCard
                 if(scorecard_model.getData().getScorecard().size()<1){
-                    bat1st.setVisibility(View.GONE);
+                    Toast.makeText(MatchSummaryActivity.this, "Match Not Started ", Toast.LENGTH_SHORT).show();
+
+                 //   bat1st.setVisibility(View.GONE);
                 }
+
                 if(scorecard_model.getData().getScorecard().size()>0) {
                     if (scorecard_model != null) {
                         BatsmanAdapter batsmanAdapter = new BatsmanAdapter(scorecard_model.getData().getScorecard().get(0).getBatting());
@@ -243,8 +246,6 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
                     }
                 }
-
-
             }
 
             @Override

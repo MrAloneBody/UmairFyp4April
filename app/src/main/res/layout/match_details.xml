@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
-        app:cardCornerRadius="30dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="3dp"
-        app:cardBackgroundColor="#D2D3DD"
+        app:cardBackgroundColor="#C1E7F8"
         >
         <TableLayout
             android:layout_width="match_parent"
@@ -26,10 +26,8 @@
             <TableRow>
                 <TextView
                     android:id="@+id/team1tv"
-                    android:hint=""
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
                     android:textColor="#000">
 
                 </TextView>
@@ -154,7 +152,6 @@
                     android:id="@+id/team2tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
                     android:textColor="#000">
 
                 </TextView>
@@ -283,7 +280,7 @@
                     android:id="@+id/matchstatustv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="60dp"
+                    android:textAlignment="center"
                     android:textColor="#000"
 
                     >
@@ -298,7 +295,7 @@
                     android:id="@+id/datetv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="60dp"
+                    android:textAlignment="center"
                     android:textColor="#000"
 
                     >
@@ -309,6 +306,68 @@
         </TableLayout>
     </androidx.cardview.widget.CardView>
 
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Comments"
+                android:textColor="#000"
+                android:textSize="25sp"
+                >
+            </TextView>
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/commentsListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/headerLayout"
+            android:layout_above="@+id/comment_section"
+            android:layout_marginBottom="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/comment_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            >
+
+            <EditText
+                android:id="@+id/writeComment"
+                android:hint="Write a Comment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="2"
+                android:focusable="true"
+                android:layout_marginLeft="2dp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:background="#00000000"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

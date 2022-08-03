@@ -31,7 +31,7 @@ public class MatchDetailActivity extends AppCompatActivity {
     TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv,mWickets1Tv,mOvers1Tv,mWickets2Tv,mOvers2Tv;
     TextView mScore3Tv,mScore4Tv,mOvers3Tv,mOvers4Tv,mWickets3Tv,mWickets4Tv;
     TextView slash1,slash2,slash3,slash4,sp1,sp2,sp3,sp4,ep1,ep2,ep3,ep4;
-    private String url= "https://api.cricapi.com/v1/match_info?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0&id=";
+   // private String url= "https://api.cricapi.com/v1/match_info?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0&id=";
 
 
 
@@ -148,10 +148,10 @@ public class MatchDetailActivity extends AppCompatActivity {
 
 
         //get set data
-        loadData();
+    //    loadData();
 
     }
-
+/*
     private void loadData() {
         //progress bar to be displayed while data is retrieving
         ProgressDialog pd=new ProgressDialog(this);
@@ -162,7 +162,6 @@ public class MatchDetailActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //this method will be called when the response from the server is received, dismiss the dialog first
 
                         pd.dismiss();
                     }
@@ -177,8 +176,9 @@ public class MatchDetailActivity extends AppCompatActivity {
         //enqueue the req
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-    }
 
+    }
+*/
     @Override
     public boolean onSupportNavigateUp() {
 

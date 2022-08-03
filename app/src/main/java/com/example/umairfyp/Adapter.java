@@ -84,11 +84,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                 String  date= model.getDate();
 
                 //options to Display in dialog
-                String[] options= {"Match Details","Players List","Match Summary"};
+                String[] options= {"Match Details","Squads","Match Summary"};
 
                 //Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());
-                builder.setTitle("Choose Option");//Title
+            //    builder.setTitle("Choose Option");//Title
 
                 //set options to dialog box
                 builder.setItems(options, new DialogInterface.OnClickListener() {
