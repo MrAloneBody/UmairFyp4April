@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="375dp"
+    android:layout_width="410dp"
     android:layout_height="match_parent"
     android:background="#DFDFDF"
     android:backgroundTint="#DADADA"
@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/News_fragment"
-        android:layout_width="187dp"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:text="News"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/feedback_fragment"
-        android:layout_width="187dp"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:text="Feedback"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +33,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="375dp"
-        android:layout_height="700dp"
+        android:layout_width="410dp"
+        android:layout_height="840dp"
         android:background="#708EFA"
         android:backgroundTint="#C1E7F8"
         app:layout_constraintEnd_toEndOf="parent"
