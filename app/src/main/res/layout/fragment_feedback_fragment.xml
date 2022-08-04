@@ -12,10 +12,12 @@
         android:layout_height="50dp"
         android:background="#FF03DAC5"
         android:backgroundTint="#FF03DAC5"
-        android:text="News"
+        android:text="Feedback"
         android:textAlignment="center"
         android:textSize="20sp"
->
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
