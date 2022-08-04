@@ -11,10 +11,14 @@ import android.view.ViewGroup;
 public class Feedback_fragment extends Fragment {
 
 
+    View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feedback_fragment, container, false);
+        view = inflater.inflate(R.layout.fragment_feedback_fragment, container, false);
+        return view;
     }
+
 }

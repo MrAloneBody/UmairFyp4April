@@ -36,17 +36,23 @@
 
     </TextView>
 
+    <FrameLayout
+        android:id="@+id/main_layout"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/News_fragment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="410dp"
         android:layout_height="840dp"
         android:background="#708EFA"
-        android:backgroundTint="#C1E7F8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/News_fragment">
+        android:backgroundTint="#C1E7F8">
 
     </androidx.recyclerview.widget.RecyclerView>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
