@@ -2,12 +2,17 @@ package com.example.umairfyp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.umairfyp.model.Data;
@@ -32,10 +37,16 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter newAdapter;
     private List<Data> newModelList;
 
+    TextView news_frag,feedback_frag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        news_frag = findViewById(R.id.News_fragment);
+        feedback_frag = findViewById(R.id.Feedback_fragment);
 
         //recyclerview
         mRecyclerView = findViewById(R.id.recyclerview);
@@ -46,6 +57,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Function to get show data from website
         loadUrlData();
+
+
+        news_frag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new News_fragment());
+
+            }
+        });
+
+        feedback_frag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new Feedback_fragment());
+
+            }
+        });
 
     }
 
@@ -78,5 +106,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("debugging", t.getMessage());
             }
         });
+    }
+
+    private void replaceFragment(Fragment fragment) {
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_layout,fragment);
+        fragmentTransaction.commit();
+
     }
 }

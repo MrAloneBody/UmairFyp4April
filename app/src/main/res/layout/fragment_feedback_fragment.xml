@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BEDBF3"
     tools:context=".Feedback_fragment">
 
     <TextView
@@ -14,6 +15,7 @@
         android:backgroundTint="#FF03DAC5"
         android:text="Feedback"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,15 +27,17 @@
         android:id="@+id/writeComment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="800dp"
+        android:layout_marginTop="570dp"
         android:background="#fff"
         android:backgroundTint="#fff"
         android:focusable="true"
         android:hint="Write a Comment"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" >
+
+    </EditText>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -160,7 +160,7 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
 
                 //1st inning ScoreCard
-                if(scorecard_model.getData().getScorecard().size()<1){
+                if(scorecard_model.getData().getScorecard().size()==0){
                     Toast.makeText(MatchSummaryActivity.this, "Match Not Started ", Toast.LENGTH_SHORT).show();
 
                  //   bat1st.setVisibility(View.GONE);
