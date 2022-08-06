@@ -11,6 +11,8 @@ class PlayersListAdapter1st(private var playersList: MutableList<Player>) : Recy
 
     class ViewHolder (val binding: RowPlayersBinding): RecyclerView.ViewHolder(binding.root)
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(RowPlayersBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
@@ -21,9 +23,10 @@ class PlayersListAdapter1st(private var playersList: MutableList<Player>) : Recy
         holder.binding.playerName.text = player.name
         holder.binding.battingStyle.text = player.battingStyle
         holder.binding.playerRole.text = player.role
-        holder.binding.playerImg.imageAlpha = player.playerImg.toInt()
+
 //        holder.itemView.setOnClickListener { mListener?.setOnItemClickListener(village) }
     }
+
 
     override fun getItemCount(): Int {
         return playersList.size

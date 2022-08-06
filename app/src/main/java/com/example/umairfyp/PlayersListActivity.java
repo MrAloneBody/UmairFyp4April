@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.umairfyp.model.players_list.PlayersList;
@@ -21,6 +22,7 @@ public class PlayersListActivity extends AppCompatActivity {
     PlayersList playerModel;
     RecyclerView rv,rv2;
     TextView team1tv,team2tv;
+    ImageView player_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class PlayersListActivity extends AppCompatActivity {
 
         team1tv=findViewById(R.id.PlayerTeamName1);
         team2tv=findViewById(R.id.PlayerTeamName2);
+        player_image=findViewById(R.id.player_img);
 
 
         RetrofitClient.getInstance().getServices().getPlayersList(id).enqueue(new Callback<PlayersList>() {

@@ -14,6 +14,7 @@
         android:id="@+id/News_fragment"
         android:layout_width="205dp"
         android:layout_height="40dp"
+        android:textAlignment="center"
         android:background="#FF03DAC5"
         android:backgroundTint="#FF03DAC5"
         android:text="News"
@@ -26,6 +27,7 @@
         android:id="@+id/Feedback_fragment"
         android:layout_width="205dp"
         android:layout_height="40dp"
+        android:textAlignment="center"
         android:background="#FF03DAC5"
         android:backgroundTint="#FF03DAC5"
 
@@ -37,7 +39,6 @@
     </TextView>
 
     <FrameLayout
-        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
@@ -47,6 +48,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/News_fragment">
 
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/News_fragment">
+    </FrameLayout>
+
+    <ScrollView
+    android:id="@+id/Current_matches_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="410dp"
@@ -55,6 +71,6 @@
             android:backgroundTint="#C1E7F8">
 
         </androidx.recyclerview.widget.RecyclerView>
+</ScrollView>
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

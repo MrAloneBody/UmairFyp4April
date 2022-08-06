@@ -337,9 +337,9 @@
             android:id="@+id/commentsListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/headerLayout"
             android:layout_above="@+id/comment_section"
-            android:layout_marginBottom="0dp"/>
+            android:layout_below="@id/headerLayout"
+            android:layout_marginBottom="0dp" />
 
         <LinearLayout
             android:id="@+id/comment_section"

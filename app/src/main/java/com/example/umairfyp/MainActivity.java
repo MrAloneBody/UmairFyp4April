@@ -12,6 +12,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Data> newModelList;
 
     TextView news_frag,feedback_frag;
+    FrameLayout frag_layout;
+    ScrollView current_matches_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         news_frag = findViewById(R.id.News_fragment);
         feedback_frag = findViewById(R.id.Feedback_fragment);
+
+        frag_layout = findViewById(R.id.fragment_layout);
+        current_matches_layout = findViewById(R.id.Current_matches_layout);
 
         //recyclerview
         mRecyclerView = findViewById(R.id.recyclerview);
@@ -62,18 +69,24 @@ public class MainActivity extends AppCompatActivity {
         news_frag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new News_fragment());
 
+                frag_layout.setVisibility(View.VISIBLE);
+                replaceFragment(new News_fragment());
+                current_matches_layout.setVisibility(View.GONE);
             }
         });
 
         feedback_frag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                frag_layout.setVisibility(View.VISIBLE);
                 replaceFragment(new Feedback_fragment());
+                current_matches_layout.setVisibility(View.GONE);
 
             }
         });
+
 
     }
 
@@ -112,8 +125,15 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_layout,fragment);
+        fragmentTransaction.replace(R.id.fragment_layout,fragment);
         fragmentTransaction.commit();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        frag_layout.setVisibility(View.GONE);
+        current_matches_layout.setVisibility(View.VISIBLE);
 
     }
 }
