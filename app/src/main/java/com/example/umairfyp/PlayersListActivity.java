@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.umairfyp.model.players_list.PlayersList;
 import com.example.umairfyp.network.RetrofitClient;
 
@@ -23,11 +25,14 @@ public class PlayersListActivity extends AppCompatActivity {
     RecyclerView rv,rv2;
     TextView team1tv,team2tv;
     ImageView player_image;
+    String PLayer_img_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_list);
+
+        Context context = this;
 
         //setting recycler Views
         rv = findViewById(R.id.rv_players_list_1st);
@@ -42,7 +47,7 @@ public class PlayersListActivity extends AppCompatActivity {
 
         team1tv=findViewById(R.id.PlayerTeamName1);
         team2tv=findViewById(R.id.PlayerTeamName2);
-        player_image=findViewById(R.id.player_img);
+//        player_image=findViewById(R.id.player_img);
 
 
         RetrofitClient.getInstance().getServices().getPlayersList(id).enqueue(new Callback<PlayersList>() {
@@ -55,10 +60,14 @@ public class PlayersListActivity extends AppCompatActivity {
 
                 if (playerModel != null) {
                     PlayersListAdapter1st playersListAdapter1st = new PlayersListAdapter1st(playerModel.getData().get(0).getPlayers());
+               //     PLayer_img_url = playerModel.getData().get(0).getPlayers().get(0).getPlayerImg();
+                 //   Glide.with(context).load(PLayer_img_url).into(player_image);
                     rv.setAdapter(playersListAdapter1st);
                 }
                 if (playerModel != null) {
                     PlayersListAdapter1st playersListAdapter2nd = new PlayersListAdapter1st(playerModel.getData().get(1).getPlayers());
+                 //   PLayer_img_url = playerModel.getData().get(1).getPlayers().get(1).getPlayerImg();
+                  //  Glide.with(context).load(PLayer_img_url).into(player_image);
                     rv2.setAdapter(playersListAdapter2nd);
                 }
             }

@@ -16,13 +16,6 @@
         android:padding="2dp">
         <TableRow>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/player_img"
-            android:layout_column="1"
-            android:textAlignment="center">
-        </ImageView>
 
             <TableLayout>
 
