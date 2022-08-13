@@ -33,6 +33,8 @@ public class PlayersListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_list);
 
+        player_image= (ImageView) findViewById(R.id.Playerimg);
+
         Context context = this;
 
         //setting recycler Views
@@ -48,7 +50,6 @@ public class PlayersListActivity extends AppCompatActivity {
 
         team1tv=findViewById(R.id.PlayerTeamName1);
         team2tv=findViewById(R.id.PlayerTeamName2);
-        player_image=findViewById(R.id.Playerimg);
 
 
         RetrofitClient.getInstance().getServices().getPlayersList(id).enqueue(new Callback<PlayersList>() {
@@ -63,14 +64,14 @@ public class PlayersListActivity extends AppCompatActivity {
                     PlayersListAdapter1st playersListAdapter1st = new PlayersListAdapter1st(playerModel.getData().get(0).getPlayers());
                     Player_img_url = playerModel.getData().get(0).getPlayers().get(0).getPlayerImg();
                  //   Glide.with(context).load(PLayer_img_url).into(player_image);
-                  //  Picasso.get().load(Player_img_url).into(player_image);
+                    Picasso.get().load(Player_img_url).into(player_image);
                     rv.setAdapter(playersListAdapter1st);
                 }
                 if (playerModel != null) {
                     PlayersListAdapter1st playersListAdapter2nd = new PlayersListAdapter1st(playerModel.getData().get(1).getPlayers());
                     Player_img_url = playerModel.getData().get(1).getPlayers().get(1).getPlayerImg();
                   //  Glide.with(context).load(PLayer_img_url).into(player_image);
-                  //  Picasso.get().load(Player_img_url).into(player_image);
+                    Picasso.get().load(Player_img_url).into(player_image);
                     rv2.setAdapter(playersListAdapter2nd);
                 }
             }

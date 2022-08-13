@@ -32,7 +32,8 @@
         android:layout_height="match_parent"
         android:textSize="30sp"
         android:text="Team2"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        >
     </TextView>
 
     <androidx.recyclerview.widget.RecyclerView

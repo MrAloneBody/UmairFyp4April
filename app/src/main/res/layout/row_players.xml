@@ -21,7 +21,8 @@
             <ImageView
                 android:id="@+id/Playerimg"
                 android:layout_width="100dp"
-                android:layout_height="100dp">
+                android:layout_height="100dp"
+                >
 
             </ImageView>
 
