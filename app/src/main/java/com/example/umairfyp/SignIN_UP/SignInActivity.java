@@ -17,8 +17,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignInActivity extends AppCompatActivity {
 
+
     private ActivitySignInBinding binding;
     private PREFRENCEmanager preferenceManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

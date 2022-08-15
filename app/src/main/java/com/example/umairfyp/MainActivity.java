@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.umairfyp.Utilities.Constants;
+import com.example.umairfyp.Utilities.PREFRENCEmanager;
+import com.example.umairfyp.databinding.ActivityMainBinding;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
 import com.example.umairfyp.network.RetrofitClient;
@@ -30,15 +34,16 @@ import retrofit2.Callback;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private ActivityMainBinding binding;
     private RecyclerView mRecyclerView;
-
-
     //for API
-    private String url= "https://api.cricapi.com/v1/currentMatches?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0";
+ //   private String url= "https://api.cricapi.com/v1/currentMatches?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0";
 
     private RecyclerView.Adapter newAdapter;
     private List<Data> newModelList;
 
+    PREFRENCEmanager prefrencEmanager;
     TextView news_frag,feedback_frag;
     FrameLayout frag_layout;
     ScrollView current_matches_layout;
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().hide();
 
         news_frag = findViewById(R.id.News_fragment);
         feedback_frag = findViewById(R.id.Feedback_fragment);
@@ -86,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     private void loadUrlData() {
@@ -136,4 +139,6 @@ public class MainActivity extends AppCompatActivity {
         current_matches_layout.setVisibility(View.VISIBLE);
 
     }
+
+
 }
