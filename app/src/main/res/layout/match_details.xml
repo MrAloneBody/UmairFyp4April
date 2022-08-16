@@ -360,15 +360,22 @@
 
             <EditText
                 android:id="@+id/writeComment"
-                android:hint="Write Your Comment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:maxLines="2"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:background="@drawable/background_chat_input"
                 android:focusable="true"
-                android:layout_marginLeft="2dp"
-                android:textSize="12sp"
+                android:paddingLeft="10dp"
+                android:hint="Write Your Comment"
+                android:maxLines="2"
                 android:textColor="@color/black"
-                android:background="#00000000"/>
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img">
+
+            </ImageView>
 
         </LinearLayout>
 

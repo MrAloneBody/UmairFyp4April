@@ -13,16 +13,16 @@ import retrofit2.http.Query;
 
 public interface Services {
 
-    @GET("currentMatches?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0")
+    @GET("currentMatches?apikey=710daf58-72c3-4beb-91b8-5f420a39eee3&offset=0")
     Call<Model> getCurrentMatches(
     );
 
-    @GET("match_squad?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f")
+    @GET("match_squad?apikey=710daf58-72c3-4beb-91b8-5f420a39eee3")
     Call<PlayersList> getPlayersList(
            @Query("id") String id
     );
 
-    @GET("match_scorecard?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f")
+    @GET("match_scorecard?apikey=710daf58-72c3-4beb-91b8-5f420a39eee3")
     Call<Model_Batsman> getScorecard(
             @Query("id") String id
     );
