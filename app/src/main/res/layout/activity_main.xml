@@ -29,7 +29,7 @@
                 android:id="@+id/Show_user_name"
                 android:layout_width="370dp"
                 android:layout_height="30dp"
-                android:hint="Username">
+                >
             </TextView>
 
             <ImageView
