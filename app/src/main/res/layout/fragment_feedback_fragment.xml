@@ -23,6 +23,23 @@
 
     </TextView>
 
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="75dp"
+        android:background="#BFFA7B"
+        android:shadowRadius="@integer/material_motion_duration_medium_2"
+        android:text="Share Your Views. Report any bug.Your Views are Highly Appreciated."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/WriteFeedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.977">
+
+    </TextView>
+
     <EditText
         android:id="@+id/WriteFeedback"
         android:layout_width="336dp"
@@ -31,6 +48,7 @@
         android:hint="Share Your Views"
         android:textColor="@color/black"
         android:textSize="12sp"
+        android:layout_marginLeft="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -339,6 +339,10 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/comment_section"
             android:layout_below="@id/headerLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
             android:layout_marginBottom="0dp" />
 
         <LinearLayout
@@ -356,7 +360,7 @@
 
             <EditText
                 android:id="@+id/writeComment"
-                android:hint="Write a Comment"
+                android:hint="Write Your Comment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:maxLines="2"

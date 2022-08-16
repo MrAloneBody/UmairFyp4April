@@ -30,12 +30,12 @@ public class SignInActivity extends AppCompatActivity {
         preferenceManager = new PREFRENCEmanager(getApplicationContext());
      //   preferenceManager = new PreferenceManager(getApplicationContext());
      //if already login dont show login page
-        /*   if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
+           if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             finish();
         }
-      */
+
         setListeners();
     }
 
