@@ -1,12 +1,10 @@
-package com.example.umairfyp;
+package com.example.umairfyp.Adapters;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.umairfyp.model.Batsman_data.Extras;
+import com.example.umairfyp.MatchDetailActivity;
+import com.example.umairfyp.MatchSummaryActivity;
+import com.example.umairfyp.PlayersListActivity;
+import com.example.umairfyp.R;
 import com.example.umairfyp.model.Batsman_data.Model_Batsman;
-import com.example.umairfyp.model.Batsman_data.Scorecard;
 import com.example.umairfyp.model.Data;
-import com.example.umairfyp.model.players_list.PlayersList;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{

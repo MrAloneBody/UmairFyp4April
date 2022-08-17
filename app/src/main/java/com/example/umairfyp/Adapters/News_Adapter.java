@@ -1,7 +1,6 @@
-package com.example.umairfyp;
+package com.example.umairfyp.Adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.umairfyp.News.Article;
+import com.example.umairfyp.R;
 
 import java.util.List;
 

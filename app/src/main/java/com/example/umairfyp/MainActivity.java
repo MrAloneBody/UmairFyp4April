@@ -1,14 +1,12 @@
 package com.example.umairfyp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.umairfyp.Utilities.Constants;
+import com.example.umairfyp.Adapters.Adapter;
 import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.databinding.ActivityMainBinding;
 import com.example.umairfyp.model.Data;

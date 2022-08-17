@@ -1,20 +1,16 @@
-package com.example.umairfyp
-/*
+package com.example.umairfyp.Adapters
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.umairfyp.databinding.RowBatsmanBinding
 import com.example.umairfyp.databinding.RowBowlerBinding
-import com.example.umairfyp.databinding.RowPlayersBinding
-import com.example.umairfyp.model.Batsman_data.Batting
 import com.example.umairfyp.model.Batsman_data.Bowling
-import com.example.umairfyp.model.Batsman_data.Scorecard
 import com.example.umairfyp.model.players_list.Data
 
 
-class BowlerAdapter2(private var scorecard: MutableList<Bowling>) : RecyclerView.Adapter<BowlerAdapter2.ViewHolder>(){
+class BowlerAdapter(private var scorecard: MutableList<Bowling>) : RecyclerView.Adapter<BowlerAdapter.ViewHolder>(){
 
-    class ViewHolder (val binding: RowBowlerBinding): RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: RowBowlerBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(RowBowlerBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -45,5 +41,3 @@ class BowlerAdapter2(private var scorecard: MutableList<Bowling>) : RecyclerView
         mListener = onItemClick
     }
 }
-
- */

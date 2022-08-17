@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.umairfyp.Adapters.News_Adapter;
 import com.example.umairfyp.News.Article;
 import com.example.umairfyp.News.Model_news;
 import com.example.umairfyp.network.Retrofit_news;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;

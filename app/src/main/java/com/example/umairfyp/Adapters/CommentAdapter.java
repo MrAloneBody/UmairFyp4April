@@ -1,4 +1,4 @@
-package com.example.umairfyp.CommentAdapter;
+package com.example.umairfyp.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

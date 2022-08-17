@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.example.umairfyp.Adapters.PlayersListAdapter1st;
 import com.example.umairfyp.model.players_list.PlayersList;
 import com.example.umairfyp.network.RetrofitClient;
 import com.squareup.picasso.Picasso;
