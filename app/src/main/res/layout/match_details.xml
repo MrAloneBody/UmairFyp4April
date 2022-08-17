@@ -2,28 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/match_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MatchDetailActivity"
-    android:id="@+id/match_details">
+    tools:context=".MatchDetailActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/header_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#C1E7F8"
         app:cardCornerRadius="20dp"
         app:cardElevation="3dp"
-        app:cardBackgroundColor="#C1E7F8"
-        >
+        app:cardUseCompatPadding="true">
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            >
+            android:padding="5dp">
 
             <TableRow>
+
                 <TextView
                     android:id="@+id/team1tv"
                     android:layout_width="wrap_content"
@@ -31,106 +31,95 @@
                     android:textColor="#000">
 
                 </TextView>
+
                 <TableRow>
 
-                <TextView
-                    android:id="@+id/score1Tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="#000"
-                    >
-                </TextView>
-                <TextView
-                    android:id="@+id/Slash1"
-                    android:text="/"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:textColor="#000"
-                    >
-                </TextView>
-                <TextView
-                    android:id="@+id/wicket1tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:textColor="#000"
-                    >
-                </TextView>
-                <TextView
-                    android:id="@+id/SP1"
-                    android:text="("
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:textColor="#000"
-                    >
-                </TextView>
+                    <TextView
+                        android:id="@+id/score1Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#000"></TextView>
+
+                    <TextView
+                        android:id="@+id/Slash1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="/"
+                        android:textColor="#000"></TextView>
+
+                    <TextView
+                        android:id="@+id/wicket1tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="#000"></TextView>
+
+                    <TextView
+                        android:id="@+id/SP1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="("
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/over1tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/EP1"
-                        android:text=")"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text=")"
+                        android:textColor="#000"></TextView>
 
                 </TableRow>
+
                 <TableRow>
 
                     <TextView
                         android:id="@+id/score3Tv"
-                        android:paddingLeft="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:paddingLeft="20dp"
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/Slash3"
-                        android:text="/"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="/"
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/wicket3tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/SP3"
-                        android:text="("
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="("
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/over3tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
 
                     <TextView
                         android:id="@+id/EP3"
@@ -148,6 +137,7 @@
             </TableRow>
 
             <TableRow>
+
                 <TextView
                     android:id="@+id/team2tv"
                     android:layout_width="wrap_content"
@@ -163,99 +153,87 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/Slash2"
-                        android:text="/"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="/"
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/wicket2tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/SP2"
-                        android:text="("
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="("
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/over2tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/EP2"
-                        android:text=")"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text=")"
+                        android:textColor="#000"></TextView>
 
                 </TableRow>
+
                 <TableRow>
 
                     <TextView
                         android:id="@+id/score4Tv"
-                        android:paddingLeft="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:paddingLeft="20dp"
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/Slash4"
-                        android:text="/"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="/"
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/wicket4tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/SP4"
-                        android:text="("
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:text="("
+                        android:textColor="#000"></TextView>
+
                     <TextView
                         android:id="@+id/over4tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"
-                        >
-                    </TextView>
+                        android:textColor="#000"></TextView>
 
                     <TextView
                         android:id="@+id/EP4"
@@ -270,7 +248,6 @@
                 </TableRow>
 
 
-
             </TableRow>
 
 
@@ -283,8 +260,7 @@
                     android:textAlignment="center"
                     android:textColor="#000"
 
-                    >
-                </TextView>
+                    ></TextView>
 
             </TableRow>
 
@@ -298,8 +274,7 @@
                     android:textAlignment="center"
                     android:textColor="#000"
 
-                    >
-                </TextView>
+                    ></TextView>
 
             </TableRow>
 
@@ -307,34 +282,32 @@
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:orientation="horizontal"
             android:layout_alignParentTop="true"
-            android:gravity="center">
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:text="Comments"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="25sp"
-                >
-            </TextView>
+                android:textSize="25sp"></TextView>
 
 
         </LinearLayout>
 
         <ListView
-            android:id="@+id/commentsListView"
+            android:id="@+id/Comments_Recycler_View"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/comment_section"
@@ -349,14 +322,13 @@
             android:id="@+id/comment_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
-            >
+            android:minHeight="50dp"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/writeComment"
@@ -364,9 +336,9 @@
                 android:layout_height="50dp"
                 android:background="@drawable/background_chat_input"
                 android:focusable="true"
-                android:paddingLeft="10dp"
                 android:hint="Write Your Comment"
                 android:maxLines="2"
+                android:paddingLeft="10dp"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
