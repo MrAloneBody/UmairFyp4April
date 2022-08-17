@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.umairfyp.News.Model_news;
 import com.example.umairfyp.model.Model;
 import com.example.umairfyp.network.RetrofitClient;
+import com.example.umairfyp.network.Retrofit_news;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -41,6 +42,9 @@ public class News_fragment extends Fragment {
     private RecyclerView.Adapter News_Adapter;
     private List<Model_news> news_list;
     View view;
+
+    Retrofit_news.
+    /*
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,7 +92,9 @@ public class News_fragment extends Fragment {
                         }
                     }
 
-                    News_Adapter = new News_Adapter(news_list,getContext());
+                    News_Adapter = new News_Adapter(news_list,getActivity());
+                    news_Recycler_View.setAdapter(News_Adapter);
+
                 }
                 catch (Exception e){
                     Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -106,4 +112,6 @@ public class News_fragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
     }
+
+     */
 }
