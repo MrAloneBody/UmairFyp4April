@@ -1,25 +1,15 @@
 package com.example.umairfyp;
 
-import android.view.ViewGroup;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class News_Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class News_Adapter {
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-    @NonNull
-    @Override
-    public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
     }
 }

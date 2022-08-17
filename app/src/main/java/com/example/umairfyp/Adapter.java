@@ -56,7 +56,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         return new ViewHolder(view);
     }
 
-  //  @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -214,7 +213,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
         //define view objects
 

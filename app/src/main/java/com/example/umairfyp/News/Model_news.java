@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Model {
+public class Model_news {
 
     @SerializedName("status")
     @Expose
@@ -16,6 +16,10 @@ public class Model {
     @SerializedName("articles")
     @Expose
     private List<Article> articles = null;
+
+    public Model_news(String title, String description) {
+
+    }
 
     public String getStatus() {
         return status;

@@ -19,6 +19,7 @@
     </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/News_recycler_view"
         android:layout_marginTop="40dp"
         android:backgroundTint="#fff"
         android:background="#fff"

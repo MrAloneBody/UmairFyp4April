@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.umairfyp.databinding.ActivityCommentBinding;
+import com.google.firebase.firestore.auth.User;
+
 public class comment_activity extends AppCompatActivity {
 
+    private ActivityCommentBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comment);
+        binding = ActivityCommentBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
     }
 }
