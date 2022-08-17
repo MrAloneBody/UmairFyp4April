@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 public interface Services_news {
 
 
-    @GET("https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=3130b87889c94b4da1915b306b3755ac")
+    @GET("top-headlines?country=in&category=sports&apiKey=3130b87889c94b4da1915b306b3755ac")
     Call<Model_news> getNews(
 
     );

@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private RecyclerView mRecyclerView;
-    //for API
- //   private String url= "https://api.cricapi.com/v1/currentMatches?apikey=7d2dc5ae-9763-41fe-8f0d-00217c6a0d8f&offset=0";
 
     private RecyclerView.Adapter newAdapter;
     private List<Data> newModelList;

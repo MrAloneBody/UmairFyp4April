@@ -1,6 +1,7 @@
 package com.example.umairfyp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,17 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.umairfyp.News.Article;
-import com.example.umairfyp.News.Model_news;
 
 import java.util.List;
 
 public class News_Adapter extends RecyclerView.Adapter<News_Adapter.ViewHolder> {
 
-    private List<Model_news> news_list;
+    private List<Article> news_list;
     private Context context;
 
-    public News_Adapter(List<Model_news> news_list, FragmentActivity activity) {
+    public News_Adapter(List<Article> news_list, FragmentActivity activity) {
+        this.news_list = news_list;
+        this.context = context;
     }
 
     @NonNull
@@ -33,9 +35,10 @@ public class News_Adapter extends RecyclerView.Adapter<News_Adapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Model_news model = news_list.get(position);
-        holder.title.setText(model.getArticles().get(position).getTitle());
-        holder.description.setText(model.getArticles().get(position).getDescription());
+        Article model = news_list.get(position);
+   //     Log.d("NewsListSize", String.valueOf(news_list.size()));
+        holder.title.setText(model.getTitle());
+        holder.description.setText(model.getDescription());
     }
 
     @Override

@@ -17,6 +17,7 @@ public class Retrofit_news {
 
     private  Retrofit_news() {
         retrofit = new Retrofit.Builder()
+                .baseUrl("https://newsapi.org/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
