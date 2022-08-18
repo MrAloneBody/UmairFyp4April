@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.umairfyp.Utilities.Constants;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -54,6 +55,7 @@ public class Feedback_fragment extends Fragment {
                     String written_feedback = write_feedback.getText().toString();
                     Map<String,Object> user = new HashMap<>();
                     user.put("Feedback",written_feedback);
+                    user.put("Email : ", user.get(Constants.KEY_EMAIL));
 
                     database.collection("Feedbacks")
                             .add(user)

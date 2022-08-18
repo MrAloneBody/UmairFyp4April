@@ -8,7 +8,6 @@ public class Constants {
     public static final String KEY_PREFERENCE_NAME="AppPreference";
     public static final String KEY_IS_SIGNED_IN="isSignedIn";
     public static final String KEY_USER_ID="userId";
-    public static final String KEY_IMAGE="image";
     public static final String KEY_FCM_TOKEN="fcmtoken";
     public static final String KEY_USER = "user";
     public static final String KEY_COLLECTION_COMMENT = "comment";

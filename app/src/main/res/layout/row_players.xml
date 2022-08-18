@@ -18,6 +18,7 @@
 
         <TableRow>
 
+            <!--
             <ImageView
                 android:id="@+id/Playerimg"
                 android:layout_width="100dp"
@@ -26,6 +27,7 @@
 
             </ImageView>
 
+-->
             <TableLayout>
 
             <TableRow>

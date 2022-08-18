@@ -8,14 +8,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+
     <TextView
+        android:id="@+id/PlayerTeamName1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#B0E376"
         android:paddingBottom="10dp"
         android:text="Team1"
-        android:textSize="30sp"
         android:textAlignment="center"
-        android:id="@+id/PlayerTeamName1">
+        android:textSize="30sp">
 
     </TextView>
     <androidx.recyclerview.widget.RecyclerView
@@ -28,8 +30,9 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:id="@+id/PlayerTeamName2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#B0E376"
         android:textSize="30sp"
         android:text="Team2"
         android:textAlignment="center"

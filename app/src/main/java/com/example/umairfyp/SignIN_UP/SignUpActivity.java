@@ -3,6 +3,7 @@ package com.example.umairfyp.SignIN_UP;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -63,6 +64,8 @@ public class SignUpActivity extends AppCompatActivity {
                     loading(false);
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
                     preferenceManager.putString(Constants.KEY_USER_ID,documentReference.getId());
+                    preferenceManager.putString(Constants.KEY_EMAIL,binding.etMail.getText().toString());
+               //     Log.d("KEY_EMAIL", (String) user.get(Constants.KEY_EMAIL));
                     preferenceManager.putString(Constants.KEY_NAME,binding.UserName.getText().toString());
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
