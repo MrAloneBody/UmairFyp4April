@@ -1,11 +1,12 @@
 package com.example.umairfyp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ListAdapter;
 
-import com.example.umairfyp.Adapters.Comment_Adapter;
+import com.example.umairfyp.Adapters.CommentAdapter;
 import com.example.umairfyp.Utilities.Constants;
 import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.databinding.MatchDetailsBinding;
@@ -14,6 +15,7 @@ import com.example.umairfyp.model.Comment_models.User;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class comment_activity extends AppCompatActivity {
@@ -23,7 +25,7 @@ public class comment_activity extends AppCompatActivity {
     private List<CommentMessage> commentMessages;
     private PREFRENCEmanager prefrencEmanager;
     private FirebaseFirestore database;
-    private Comment_Adapter comment_adapter;
+    private CommentAdapter commentadapter;
 
 
     @Override
@@ -39,11 +41,18 @@ public class comment_activity extends AppCompatActivity {
 
         prefrencEmanager = new PREFRENCEmanager(getApplicationContext());
         commentMessages = new ArrayList<>();
-        comment_adapter = new Comment_Adapter(commentMessages,prefrencEmanager.getString(Constants.KEY_USER_ID));
-        binding.CommentsRecyclerView.setAdapter((ListAdapter) comment_adapter);
+        commentadapter = new CommentAdapter(commentMessages,prefrencEmanager.getString(Constants.KEY_USER_ID));
+    //    binding.CommentsRecyclerView.setAdapter((RecyclerView.Adapter) commentadapter);
         database =  FirebaseFirestore.getInstance();
     }
 
+
+    private void sendMessage(){
+        HashMap<String , Object> message = new HashMap<>();
+        message.put(Constants.KEY_SENDER_ID,prefrencEmanager.getString(Constants.KEY_USER_ID));
+        message.put(Constants.KEY_RECIEVER_ID, recieverUser.id);
+  //      message.put(Constants.KEY_MESSAGE,binding.);
+    }
 
     public void loadRecieverDetails(){
         recieverUser = (User) getIntent().getSerializableExtra(Constants.KEY_USER_ID);

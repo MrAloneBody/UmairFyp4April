@@ -97,7 +97,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                         if (which ==0){
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
-                          //  intent.putExtra("match_id",match_id);
+                            intent.putExtra("match_id",match_id);
 
                             intent.putExtra("date",date);
                             intent.putExtra("Team1",model.getTeams().get(0));

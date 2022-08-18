@@ -306,10 +306,11 @@
 
         </LinearLayout>
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/Comments_Recycler_View"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:stackFromEnd="true"
             android:layout_above="@+id/comment_section"
             android:layout_below="@id/headerLayout"
             android:layout_alignParentStart="true"
@@ -343,6 +344,7 @@
                 android:textSize="12sp" />
 
             <ImageView
+                android:id="@+id/send_comment"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/img">
