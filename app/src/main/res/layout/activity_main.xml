@@ -33,6 +33,7 @@
             </TextView>
 
             <ImageView
+                android:id="@+id/Sign_out_img"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:src="@drawable/signout_img">

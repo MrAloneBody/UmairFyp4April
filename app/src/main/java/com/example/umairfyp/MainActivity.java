@@ -8,22 +8,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.umairfyp.Adapters.Adapter;
+import com.example.umairfyp.SignIN_UP.SignInActivity;
+import com.example.umairfyp.Utilities.Constants;
 import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.databinding.ActivityMainBinding;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
 import com.example.umairfyp.network.RetrofitClient;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     TextView news_frag,feedback_frag;
     FrameLayout frag_layout;
     ScrollView current_matches_layout;
+    ImageView signout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         news_frag = findViewById(R.id.News_fragment);
         feedback_frag = findViewById(R.id.Feedback_fragment);
+        signout = findViewById(R.id.Sign_out_img);
 
         frag_layout = findViewById(R.id.fragment_layout);
         current_matches_layout = findViewById(R.id.Current_matches_layout);
@@ -65,8 +75,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Function to get show data from website
         loadUrlData();
+/*
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
 
 
+ */
         news_frag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,5 +154,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+/*
+    private void signOut(){
+        Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT).show();
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference documentReference =
+                database.collection(Constants.KEY_COLLECTION_USERS).document(
+                        prefrencEmanager.getString(Constants.KEY_USER_ID)
+                );
+        HashMap<String,Object> updates = new HashMap<>();
+        updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
+        documentReference.update(updates)
+                .addOnSuccessListener(unused -> {
+                    prefrencEmanager.clear();
+                    startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                    finish();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Unable to signout.", Toast.LENGTH_SHORT).show();
+                });
+    }
+    */
 }

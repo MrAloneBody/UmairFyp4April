@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.umairfyp.MainActivity;
 import com.example.umairfyp.Utilities.Constants;
 import com.example.umairfyp.Utilities.PREFRENCEmanager;
+import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivitySignInBinding;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,6 +21,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private ActivitySignInBinding binding;
     private PREFRENCEmanager preferenceManager;
+    private PrefrenceManager1 prefrenceManager1;
 
 
     @Override
@@ -27,10 +29,10 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        preferenceManager = new PREFRENCEmanager(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
      //   preferenceManager = new PreferenceManager(getApplicationContext());
      //if already login dont show login page
-           if(preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)){
+           if(prefrenceManager1.getBoolean(Constants.KEY_IS_SIGNED_IN)){
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             finish();
@@ -61,10 +63,10 @@ public class SignInActivity extends AppCompatActivity {
                     if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0){
 
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
-                        preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
-                        preferenceManager.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
-                        preferenceManager.putString(Constants.KEY_EMAIL,documentSnapshot.getString(Constants.KEY_EMAIL));
-                        preferenceManager.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));
+                        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
+                        prefrenceManager1.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
+                        prefrenceManager1.putString(Constants.KEY_EMAIL,documentSnapshot.getString(Constants.KEY_EMAIL));
+                        prefrenceManager1.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);

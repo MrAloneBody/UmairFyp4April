@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,7 @@ public class Feedback_fragment extends Fragment {
                     String written_feedback = write_feedback.getText().toString();
                     Map<String,Object> user = new HashMap<>();
                     user.put("Feedback",written_feedback);
+                    Log.d("KEY_EMAIL", String.valueOf(user.get(Constants.KEY_EMAIL)));
                     user.put("Email : ", user.get(Constants.KEY_EMAIL));
 
                     database.collection("Feedbacks")
