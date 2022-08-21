@@ -3,11 +3,13 @@ package com.example.umairfyp;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,20 +53,34 @@ public class MatchDetailActivity extends AppCompatActivity {
     private FirebaseFirestore database;
     private CommentAdapter commentadapter;
     public String match_id;
+    ArrayList<Comment> commentArrayList;
 
     TextView mTeam1Tv, mTeam2Tv, mMatchStatusTv, mScore1Tv, mDateTv,mScore2Tv,mWickets1Tv,mOvers1Tv,mWickets2Tv,mOvers2Tv;
     TextView mScore3Tv,mScore4Tv,mOvers3Tv,mOvers4Tv,mWickets3Tv,mWickets4Tv;
     TextView slash1,slash2,slash3,slash4,sp1,sp2,sp3,sp4,ep1,ep2,ep3,ep4;
     ImageView sendcomment;
     EditText writecomment;
+    RecyclerView recyclerView_comment;
+    private CommentAdapter1 commentAdapter1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match_details);
+
         binding = MatchDetailsBinding.inflate(getLayoutInflater());
 
+        recyclerView_comment = findViewById(R.id.Comments_Recycler_View);
+        recyclerView_comment.setHasFixedSize(true);
+        recyclerView_comment.setLayoutManager(new LinearLayoutManager(this));
+/*
+        database = FirebaseFirestore.getInstance();
+        commentArrayList = new ArrayList<Comment>();
+        commentAdapter1 = new CommentAdapter1(MatchDetailActivity.this, commentArrayList);
 
+        EventChangeListener();
+
+ */
         //Actionbar
 
         ActionBar actionBar = getSupportActionBar();
@@ -188,6 +204,7 @@ public class MatchDetailActivity extends AppCompatActivity {
         listenerMessages();
 
     }
+
     @Override
     public boolean onSupportNavigateUp() {
 
@@ -204,7 +221,7 @@ public class MatchDetailActivity extends AppCompatActivity {
         prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
         commentMessages = new ArrayList<>();
         commentadapter = new CommentAdapter(commentMessages,prefrenceManager1.getString(Constants.KEY_USER_ID));
-        binding.CommentsRecyclerView.setAdapter((RecyclerView.Adapter) commentadapter);
+        binding.CommentsRecyclerView.setAdapter(commentadapter);
         database =  FirebaseFirestore.getInstance();
     }
 
@@ -216,6 +233,8 @@ public class MatchDetailActivity extends AppCompatActivity {
         }else{
             HashMap<String, Object> message = new HashMap<>();
             message.put(Constants.KEY_SENDER_ID, prefrenceManager1.getString(Constants.KEY_USER_ID));
+            message.put(Constants.KEY_NAME,prefrenceManager1.getString(Constants.KEY_NAME));
+            Log.d("KEY_NAME", (String) message.get(Constants.KEY_NAME));
             message.put(Constants.KEY_RECIEVER_ID, match_id);
             message.put(Constants.KEY_MESSAGE, writecomment.getText().toString());
             database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
@@ -245,9 +264,9 @@ public class MatchDetailActivity extends AppCompatActivity {
               if(documentChange.getType() == DocumentChange.Type.ADDED){
 
                   CommentMessage commentMessage = new CommentMessage();
-                  commentMessage.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
-                  commentMessage.recieverId = documentChange.getDocument().getString(match_id);
-                  commentMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
+                  CommentMessage.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                  CommentMessage.recieverId = documentChange.getDocument().getString(match_id);
+                  CommentMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
                   commentMessages.add(commentMessage);
               }
           }
@@ -258,5 +277,15 @@ public class MatchDetailActivity extends AppCompatActivity {
 
              recieverUser = (User) getIntent().getSerializableExtra(Constants.KEY_USER_ID);
     }
+
+
+
+    private void EventChangeListener() {
+
+        database.collection("comment");
+
+
+    }
+
 
 }
