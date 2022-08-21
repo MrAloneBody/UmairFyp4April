@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.umairfyp.MainActivity;
 import com.example.umairfyp.Utilities.Constants;
-import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivitySignUpBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -21,7 +20,6 @@ import java.util.HashMap;
 public class SignUpActivity extends AppCompatActivity {
     private ActivitySignUpBinding binding;
     private PrefrenceManager1 prefrenceManager1;
-    private PREFRENCEmanager preferenceManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
                     prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
                     prefrenceManager1.putString(Constants.KEY_USER_ID,documentReference.getId());
                     prefrenceManager1.putString(Constants.KEY_EMAIL,binding.etMail.getText().toString());
-               //     Log.d("KEY_EMAIL", (String) user.get(Constants.KEY_EMAIL));
+                    Log.d("KEY_EMAIL", (String) user.get(Constants.KEY_EMAIL));
                     prefrenceManager1.putString(Constants.KEY_NAME,binding.UserName.getText().toString());
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);

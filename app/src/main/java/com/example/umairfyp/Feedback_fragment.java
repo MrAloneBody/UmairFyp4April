@@ -57,6 +57,8 @@ public class Feedback_fragment extends Fragment {
                     Map<String,Object> user = new HashMap<>();
                     user.put("Feedback",written_feedback);
                     Log.d("KEY_EMAIL", String.valueOf(user.get(Constants.KEY_EMAIL)));
+                    Log.d("KEY_EMAIL", String.valueOf(user.get(Constants.KEY_NAME)));
+
                     user.put("Email : ", user.get(Constants.KEY_EMAIL));
 
                     database.collection("Feedbacks")

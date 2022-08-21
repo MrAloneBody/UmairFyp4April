@@ -8,7 +8,7 @@ import android.widget.ListAdapter;
 
 import com.example.umairfyp.Adapters.CommentAdapter;
 import com.example.umairfyp.Utilities.Constants;
-import com.example.umairfyp.Utilities.PREFRENCEmanager;
+import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.MatchDetailsBinding;
 import com.example.umairfyp.model.Comment_models.CommentMessage;
 import com.example.umairfyp.model.Comment_models.User;
@@ -23,7 +23,8 @@ public class comment_activity extends AppCompatActivity {
     private MatchDetailsBinding binding;
     private User recieverUser;
     private List<CommentMessage> commentMessages;
-    private PREFRENCEmanager prefrencEmanager;
+  //  private PREFRENCEmanager prefrencEmanager;
+    private PrefrenceManager1 prefrenceManager1;
     private FirebaseFirestore database;
     private CommentAdapter commentadapter;
 
@@ -39,9 +40,9 @@ public class comment_activity extends AppCompatActivity {
 
     private void init(){
 
-        prefrencEmanager = new PREFRENCEmanager(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
         commentMessages = new ArrayList<>();
-        commentadapter = new CommentAdapter(commentMessages,prefrencEmanager.getString(Constants.KEY_USER_ID));
+        commentadapter = new CommentAdapter(commentMessages,prefrenceManager1.getString(Constants.KEY_USER_ID));
     //    binding.CommentsRecyclerView.setAdapter((RecyclerView.Adapter) commentadapter);
         database =  FirebaseFirestore.getInstance();
     }
@@ -49,7 +50,7 @@ public class comment_activity extends AppCompatActivity {
 
     private void sendMessage(){
         HashMap<String , Object> message = new HashMap<>();
-        message.put(Constants.KEY_SENDER_ID,prefrencEmanager.getString(Constants.KEY_USER_ID));
+        message.put(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID));
         message.put(Constants.KEY_RECIEVER_ID, recieverUser.id);
   //      message.put(Constants.KEY_MESSAGE,binding.);
     }

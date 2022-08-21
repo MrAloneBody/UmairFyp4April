@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.example.umairfyp.Adapters.Adapter;
 import com.example.umairfyp.SignIN_UP.SignInActivity;
 import com.example.umairfyp.Utilities.Constants;
-import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.databinding.ActivityMainBinding;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter newAdapter;
     private List<Data> newModelList;
 
-    PREFRENCEmanager prefrencEmanager;
     TextView news_frag,feedback_frag;
     FrameLayout frag_layout;
     ScrollView current_matches_layout;
@@ -75,16 +73,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Function to get show data from website
         loadUrlData();
+
 /*
+
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signOut();
             }
+
+
+
         });
 
 
  */
+
+
         news_frag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,5 +179,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Unable to signout.", Toast.LENGTH_SHORT).show();
                 });
     }
-    */
+
+
+ */
+
+
 }

@@ -23,7 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.umairfyp.Adapters.CommentAdapter;
 import com.example.umairfyp.Utilities.Constants;
-import com.example.umairfyp.Utilities.PREFRENCEmanager;
+import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.MatchDetailsBinding;
 import com.example.umairfyp.model.Batsman_data.Model_Batsman;
 import com.example.umairfyp.model.Comment_models.CommentMessage;
@@ -47,7 +47,7 @@ public class MatchDetailActivity extends AppCompatActivity {
     private MatchDetailsBinding binding;
     private User recieverUser;
     private List<CommentMessage> commentMessages;
-    private PREFRENCEmanager prefrencEmanager;
+    private PrefrenceManager1 prefrenceManager1;
     private FirebaseFirestore database;
     private CommentAdapter commentadapter;
     public String match_id;
@@ -201,9 +201,9 @@ public class MatchDetailActivity extends AppCompatActivity {
 
     private void init(){
 
-        prefrencEmanager = new PREFRENCEmanager(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
         commentMessages = new ArrayList<>();
-        commentadapter = new CommentAdapter(commentMessages,prefrencEmanager.getString(Constants.KEY_USER_ID));
+        commentadapter = new CommentAdapter(commentMessages,prefrenceManager1.getString(Constants.KEY_USER_ID));
         binding.CommentsRecyclerView.setAdapter((RecyclerView.Adapter) commentadapter);
         database =  FirebaseFirestore.getInstance();
     }
@@ -215,7 +215,7 @@ public class MatchDetailActivity extends AppCompatActivity {
 
         }else{
             HashMap<String, Object> message = new HashMap<>();
-            message.put(Constants.KEY_SENDER_ID, prefrencEmanager.getString(Constants.KEY_USER_ID));
+            message.put(Constants.KEY_SENDER_ID, prefrenceManager1.getString(Constants.KEY_USER_ID));
             message.put(Constants.KEY_RECIEVER_ID, match_id);
             message.put(Constants.KEY_MESSAGE, writecomment.getText().toString());
             database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
@@ -226,12 +226,12 @@ public class MatchDetailActivity extends AppCompatActivity {
 
     private void listenerMessages(){
         database.collection(Constants.KEY_COLLECTION_COMMENT)
-                .whereEqualTo(Constants.KEY_SENDER_ID,prefrencEmanager.getString(Constants.KEY_USER_ID))
+                .whereEqualTo(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
                 .whereEqualTo(Constants.KEY_RECIEVER_ID,match_id)
                 .addSnapshotListener(eventListener);
         database.collection(Constants.KEY_COLLECTION_COMMENT)
                 .whereEqualTo(Constants.KEY_SENDER_ID,match_id)
-                .whereEqualTo(Constants.KEY_RECIEVER_ID,prefrencEmanager.getString(Constants.KEY_USER_ID))
+                .whereEqualTo(Constants.KEY_RECIEVER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
                 .addSnapshotListener(eventListener);
     }
 

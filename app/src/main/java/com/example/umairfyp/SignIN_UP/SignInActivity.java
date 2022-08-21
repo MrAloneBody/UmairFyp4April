@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.umairfyp.MainActivity;
 import com.example.umairfyp.Utilities.Constants;
-import com.example.umairfyp.Utilities.PREFRENCEmanager;
 import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivitySignInBinding;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -20,7 +19,7 @@ public class SignInActivity extends AppCompatActivity {
 
 
     private ActivitySignInBinding binding;
-    private PREFRENCEmanager preferenceManager;
+
     private PrefrenceManager1 prefrenceManager1;
 
 
