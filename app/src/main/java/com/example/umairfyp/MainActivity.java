@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.umairfyp.Adapters.Adapter;
 import com.example.umairfyp.SignIN_UP.SignInActivity;
 import com.example.umairfyp.Utilities.Constants;
+import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivityMainBinding;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter newAdapter;
     private List<Data> newModelList;
 
+    PrefrenceManager1 prefrenceManager1;
     TextView news_frag,feedback_frag;
     FrameLayout frag_layout;
     ScrollView current_matches_layout;
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         // Function to get show data from website
         loadUrlData();
 
-/*
+
 
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
- */
+
 
 
         news_frag.setOnClickListener(new View.OnClickListener() {
@@ -159,9 +161,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*
+
     private void signOut(){
         Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT).show();
+
+        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,false);
+        startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+
+/*
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference =
                 database.collection(Constants.KEY_COLLECTION_USERS).document(
@@ -184,4 +191,4 @@ public class MainActivity extends AppCompatActivity {
  */
 
 
-}
+}}

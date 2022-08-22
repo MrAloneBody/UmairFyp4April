@@ -91,8 +91,10 @@ public class MatchSummaryActivity extends AppCompatActivity {
 
 
         mScore1Tv.setText(Score1);
-        mScore3Tv.setText(Score3);
+
+
         mScore2Tv.setText(Score2);
+        mScore3Tv.setText(Score3);
         mScore4Tv.setText(Score4);
         mWickets1Tv.setText(Wickets1);
         mWickets2Tv.setText(Wickets2);

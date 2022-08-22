@@ -27,17 +27,4 @@ public interface Services {
             @Query("id") String id
     );
 
-
-
-//    @GET("list_movies.json")
-//    Call<Model> getMoviesList(
-//            @Query("limit")int limit
-//            , @Query("page")int page
-//            , @Query("quality")String quality
-//            , @Query("minimum_rating") int minimumRating
-//            , @Query("query_term") String query
-//            , @Query("genre")String genre
-//            , @Query("sort_by") String sortBy
-//            , @Query("order_by") String orderBy
-//    );
 }

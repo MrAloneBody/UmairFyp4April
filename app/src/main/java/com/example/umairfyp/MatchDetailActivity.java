@@ -24,6 +24,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.umairfyp.Adapters.CommentAdapter;
+import com.example.umairfyp.SignIN_UP.SignInActivity;
 import com.example.umairfyp.Utilities.Constants;
 import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.MatchDetailsBinding;
@@ -33,7 +34,9 @@ import com.example.umairfyp.model.Comment_models.User;
 import com.example.umairfyp.model.Data;
 import com.example.umairfyp.model.Model;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.remote.WatchChange;
@@ -234,7 +237,7 @@ public class MatchDetailActivity extends AppCompatActivity {
             HashMap<String, Object> message = new HashMap<>();
             message.put(Constants.KEY_SENDER_ID, prefrenceManager1.getString(Constants.KEY_USER_ID));
             message.put(Constants.KEY_NAME,prefrenceManager1.getString(Constants.KEY_NAME));
-            Log.d("KEY_NAME", (String) message.get(Constants.KEY_NAME));
+            message.put(Constants.KEY_EMAIL,prefrenceManager1.getString(Constants.KEY_EMAIL));
             message.put(Constants.KEY_RECIEVER_ID, match_id);
             message.put(Constants.KEY_MESSAGE, writecomment.getText().toString());
             database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
@@ -286,6 +289,5 @@ public class MatchDetailActivity extends AppCompatActivity {
 
 
     }
-
 
 }

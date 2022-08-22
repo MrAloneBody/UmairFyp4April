@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -66,10 +67,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         if(model.getTeams().get(0).contains("Pakistan") || model.getTeams().get(1).contains("Pakistan"))
             holder.mainLayout.setBackgroundColor(Color.GREEN);
+
         holder.matchtypetv.setText(model.getMatchType());
         holder.matchstatustv.setText(model.getStatus());
-
         holder.datetv.setText(model.getDate());
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +220,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2;
         CardView cardView;
         TableLayout mainLayout;
+
 
 
         public ViewHolder(@NonNull View itemView) {

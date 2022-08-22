@@ -77,8 +77,6 @@ public class Feedback_fragment extends Fragment {
                         }
                     });
 
-                    Toast.makeText(getActivity(),"Feedback Submitted",Toast.LENGTH_LONG).show();
-
                 }
 
             }
