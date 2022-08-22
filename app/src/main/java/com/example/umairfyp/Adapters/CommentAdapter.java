@@ -30,7 +30,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         if(viewType == VIEW_TYPE_SENT){
-            return new SentMessageViewHolder(ItemContainerSentMessageBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false));
+            return new ReceivedMessageViewHolder(ItemContainerRecievedMessageBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false));
         }
         else
         {
@@ -44,7 +44,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if(getItemViewType(position)==VIEW_TYPE_SENT){
-            ((SentMessageViewHolder)holder).setData(commentMessages.get(position));
+            ((ReceivedMessageViewHolder)holder).setData(commentMessages.get(position));
         }else{
             ((ReceivedMessageViewHolder)holder).setData(commentMessages.get(position));
         }
