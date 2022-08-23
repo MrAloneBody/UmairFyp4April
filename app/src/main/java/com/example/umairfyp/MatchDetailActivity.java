@@ -238,6 +238,7 @@ public class MatchDetailActivity extends AppCompatActivity {
             message.put(Constants.KEY_SENDER_ID, prefrenceManager1.getString(Constants.KEY_USER_ID));
             message.put(Constants.KEY_NAME,prefrenceManager1.getString(Constants.KEY_NAME));
             message.put(Constants.KEY_EMAIL,prefrenceManager1.getString(Constants.KEY_EMAIL));
+            message.put(Constants.KEY_TIMESTAMP,prefrenceManager1.getString(Constants.KEY_TIMESTAMP));
             message.put(Constants.KEY_RECIEVER_ID, match_id);
             message.put(Constants.KEY_MESSAGE, writecomment.getText().toString());
             database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
@@ -270,8 +271,16 @@ public class MatchDetailActivity extends AppCompatActivity {
                   CommentMessage.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
                   CommentMessage.recieverId = documentChange.getDocument().getString(match_id);
                   CommentMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
+
                   commentMessages.add(commentMessage);
               }
+          }
+          //     Collections.sort(commentMessages,(obj1,obj2)-> obj1.date);
+          if(count==0){
+              commentadapter.notifyDataSetChanged();
+          }else{
+              commentadapter.notifyItemRangeInserted(commentMessages.size(), commentMessages.size());
+              binding.CommentsRecyclerView.smoothScrollToPosition(commentMessages.size()-1);
           }
           binding.CommentsRecyclerView.setVisibility(View.VISIBLE);
       }

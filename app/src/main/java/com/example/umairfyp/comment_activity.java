@@ -45,10 +45,10 @@ public class comment_activity extends AppCompatActivity {
         setContentView(binding.getRoot());
         match_id=matchDetailActivity.match_id;
 
-        setListener();
+    //    setListener();
         loadRecieverDetails();
-        init();
-        listenMessages();
+      //  init();
+      //  listenMessages();
     }
 
     private void init(){
@@ -63,66 +63,66 @@ public class comment_activity extends AppCompatActivity {
         binding.CommentsRecyclerView.setAdapter(commentadapter);
         database =  FirebaseFirestore.getInstance();
     }
+    /*
 
+        private void listenMessages(){
+            database.collection(Constants.KEY_COLLECTION_COMMENT)
+                    .whereEqualTo(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
+                    .whereEqualTo(Constants.KEY_RECIEVER_ID,match_id)
+                    .addSnapshotListener(eventListener);
+            database.collection(Constants.KEY_COLLECTION_COMMENT)
+                    .whereEqualTo(Constants.KEY_SENDER_ID,match_id)
+                    .whereEqualTo(Constants.KEY_RECIEVER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
+                    .addSnapshotListener(eventListener);
+        }
 
-    private void listenMessages(){
-        database.collection(Constants.KEY_COLLECTION_COMMENT)
-                .whereEqualTo(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
-                .whereEqualTo(Constants.KEY_RECIEVER_ID,match_id)
-                .addSnapshotListener(eventListener);
-        database.collection(Constants.KEY_COLLECTION_COMMENT)
-                .whereEqualTo(Constants.KEY_SENDER_ID,match_id)
-                .whereEqualTo(Constants.KEY_RECIEVER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID))
-                .addSnapshotListener(eventListener);
-    }
+        private final EventListener<QuerySnapshot> eventListener = (value,error) ->{
+          if(error != null ){
 
-    private final EventListener<QuerySnapshot> eventListener = (value,error) ->{
-      if(error != null ){
+              return;
+          }
+          if(value != null ){
+              int count = commentMessages.size();
+              for(DocumentChange documentChange : value.getDocumentChanges()){
+                  if(documentChange.getType()== DocumentChange.Type.ADDED){
 
-          return;
-      }
-      if(value != null ){
-          int count = commentMessages.size();
-          for(DocumentChange documentChange : value.getDocumentChanges()){
-              if(documentChange.getType()== DocumentChange.Type.ADDED){
+                      CommentMessage commentMessage = new CommentMessage();
+                      commentMessage.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                      commentMessage.recieverId = documentChange.getDocument().getString(match_id);
+                      commentMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
+                      commentMessage.dateTime = documentChange.getDocument().getString(Constants.KEY_TIMESTAMP);
+                      commentMessages.add(commentMessage);
 
-                  CommentMessage commentMessage = new CommentMessage();
-                  commentMessage.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
-                  commentMessage.recieverId = documentChange.getDocument().getString(match_id);
-                  commentMessage.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
-                  commentMessage.dateTime = documentChange.getDocument().getString(Constants.KEY_TIMESTAMP);
-                  commentMessages.add(commentMessage);
-
+                  }
               }
+         //     Collections.sort(commentMessages,(obj1,obj2)-> obj1.date);
+              if(count==0){
+                  commentadapter.notifyDataSetChanged();
+              }else{
+                  commentadapter.notifyItemRangeInserted(commentMessages.size(), commentMessages.size());
+                  binding.CommentsRecyclerView.smoothScrollToPosition(commentMessages.size()-1);
+              }
+              binding.CommentsRecyclerView.setVisibility(View.VISIBLE);
           }
-     //     Collections.sort(commentMessages,(obj1,obj2)-> obj1.date);
-          if(count==0){
-              commentadapter.notifyDataSetChanged();
-          }else{
-              commentadapter.notifyItemRangeInserted(commentMessages.size(), commentMessages.size());
-              binding.CommentsRecyclerView.smoothScrollToPosition(commentMessages.size()-1);
-          }
-          binding.CommentsRecyclerView.setVisibility(View.VISIBLE);
-      }
 
-    };
+        };
 
-    private void sendMessage(){
-        HashMap<String , Object> message = new HashMap<>();
-        message.put(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID));
-        message.put(Constants.KEY_RECIEVER_ID, match_id);
-        message.put(Constants.KEY_TIMESTAMP , new Date());
-        database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
-        binding.writeComment.setText("");
-  //      message.put(Constants.KEY_MESSAGE,binding.);
-    }
+        private void sendMessage(){
+            HashMap<String , Object> message = new HashMap<>();
+            message.put(Constants.KEY_SENDER_ID,prefrenceManager1.getString(Constants.KEY_USER_ID));
+            message.put(Constants.KEY_RECIEVER_ID, match_id);
+            message.put(Constants.KEY_TIMESTAMP , new Date());
+            database.collection(Constants.KEY_COLLECTION_COMMENT).add(message);
+            binding.writeComment.setText("");
+      //      message.put(Constants.KEY_MESSAGE,binding.);
+        }
 
+
+     */
     public void loadRecieverDetails(){
         recieverUser = (User) getIntent().getSerializableExtra(Constants.KEY_USER_ID);
     }
 
-    public void setListener(){
-        binding.sendComment.setOnClickListener(v -> sendMessage());
-    }
+   // public void setListener(){binding.sendComment.setOnClickListener(v -> sendMessage());}
 
 }
