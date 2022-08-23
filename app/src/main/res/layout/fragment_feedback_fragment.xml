@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BEDBF3"
+    tools:context=".Feedback_fragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF03DAC5"
+        android:backgroundTint="#FF03DAC5"
+        android:text="Feedback"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_height="75dp"
+        android:background="@drawable/background_sent_message"
+        android:text="Share Your Views. Report any bug.Your Views are Highly Appreciated."
+        android:textSize="20sp"
+        android:padding="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/WriteFeedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.977"
+        >
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/WriteFeedback"
+        android:layout_width="336dp"
+        android:layout_height="61dp"
+        android:background="@drawable/background_chat_input"
+        android:hint="Share Your Views"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/send_feedback"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:src="@drawable/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

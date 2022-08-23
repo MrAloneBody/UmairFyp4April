@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview"
-    app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="#fff"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="3dp"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#F4E2E2"
+    app:cardUseCompatPadding="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TableLayout
 
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:padding="5dp"
         android:stretchColumns="*"
-
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TableRow>
-<!--for payer name-->
+            <!--for payer name-->
             <TextView
                 android:id="@+id/Batsman_name"
-                android:hint="name"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:layout_column="0"
-                android:padding="10dp"
+                android:hint="name"
+                android:padding="5dp"
                 android:textColor="#000">
 
             </TextView>
@@ -37,11 +37,11 @@
 
             <TextView
                 android:id="@+id/Batsman_score"
-                android:hint="Score"
-                android:layout_width="match_parent"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:padding="10dp"
+                android:hint="Score"
+                android:padding="5dp"
                 android:textColor="#000">
 
             </TextView>
@@ -50,11 +50,11 @@
 
             <TextView
                 android:id="@+id/Batsman_bowls_faced"
-                android:hint="Balls faced"
-                android:layout_width="match_parent"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_column="2"
-                android:padding="10dp"
+                android:hint="Balls faced"
+                android:padding="5dp"
                 android:textColor="#000">
 
             </TextView>
@@ -63,27 +63,29 @@
 
             <TextView
                 android:id="@+id/Batsman_sr"
-                android:hint="SR"
-                android:layout_width="match_parent"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_column="3"
-                android:padding="10dp"
+                android:hint="SR"
+                android:padding="5dp"
                 android:textColor="#000">
 
             </TextView>
 
 
         </TableRow>
+
         <TableRow>
 
-            <!--For name of bowler-->
+            <!--For Dismissal-->
 
             <TextView
                 android:id="@+id/Dismissal"
-                android:hint="Dismissal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:padding="10dp"
+                android:hint="Dismissal"
+                android:padding="5dp"
+                android:textAlignment="center"
                 android:textColor="#000">
 
             </TextView>
@@ -91,9 +93,7 @@
         </TableRow>
 
 
-
-
     </TableLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

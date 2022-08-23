@@ -1,6 +1,5 @@
 package com.example.umairfyp.model.Batsman_data;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -11,7 +10,7 @@ public class Bowling {
     private Bowler__1 bowler;
     @SerializedName("o")
     @Expose
-    private Integer o;
+    private Float o;
     @SerializedName("m")
     @Expose
     private Integer m;
@@ -29,7 +28,7 @@ public class Bowling {
     private Integer wd;
     @SerializedName("eco")
     @Expose
-    private Integer eco;
+    private Double eco;
 
     public Bowler__1 getBowler() {
         return bowler;
@@ -39,11 +38,11 @@ public class Bowling {
         this.bowler = bowler;
     }
 
-    public Integer getO() {
+    public Float getO() {
         return o;
     }
 
-    public void setO(Integer o) {
+    public void setO(Float o) {
         this.o = o;
     }
 
@@ -87,11 +86,11 @@ public class Bowling {
         this.wd = wd;
     }
 
-    public Integer getEco() {
+    public Double getEco() {
         return eco;
     }
 
-    public void setEco(Integer eco) {
+    public void setEco(Double eco) {
         this.eco = eco;
     }
 

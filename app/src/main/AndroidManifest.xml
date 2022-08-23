@@ -12,19 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UmairFyp">
         <activity
+            android:name=".comment_activity"
+            android:exported="false" />
+<!--        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2" />
+            -->
+        <activity
             android:name=".PlayersListActivity"
             android:exported="false" />
         <activity
-            android:name=".MatchSummaryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PlayersActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MatchDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".SignIN_UP.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +31,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignIN_UP.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MatchSummaryActivity"
+            android:exported="false" />
+    <!--    <activity
+            android:name=".PlayersActivity"
+            android:exported="false" />
+            -->
+        <activity
+            android:name=".MatchDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

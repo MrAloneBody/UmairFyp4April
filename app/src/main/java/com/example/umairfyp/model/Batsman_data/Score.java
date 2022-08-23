@@ -13,7 +13,7 @@ public class Score {
     private Integer w;
     @SerializedName("o")
     @Expose
-    private Integer o;
+    private Double o;
     @SerializedName("inning")
     @Expose
     private String inning;
@@ -34,11 +34,11 @@ public class Score {
         this.w = w;
     }
 
-    public Integer getO() {
+    public Double getO() {
         return o;
     }
 
-    public void setO(Integer o) {
+    public void setO(Double o) {
         this.o = o;
     }
 

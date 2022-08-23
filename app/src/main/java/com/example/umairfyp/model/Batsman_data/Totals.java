@@ -10,7 +10,7 @@ public class Totals {
     private Integer r;
     @SerializedName("O")
     @Expose
-    private Integer o;
+    private Double o;
     @SerializedName("W")
     @Expose
     private Integer w;
@@ -26,11 +26,11 @@ public class Totals {
         this.r = r;
     }
 
-    public Integer getO() {
+    public Double getO() {
         return o;
     }
 
-    public void setO(Integer o) {
+    public void setO(Double o) {
         this.o = o;
     }
 

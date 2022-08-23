@@ -13,6 +13,7 @@ public class RetrofitClient {
         return retrofitClient;
     }
     private Retrofit retrofit;
+
     private  RetrofitClient() {
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.cricapi.com/v1/")

@@ -1,15 +1,14 @@
-package com.example.umairfyp;
+package com.example.umairfyp.Adapters;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -17,17 +16,26 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.umairfyp.MatchDetailActivity;
+import com.example.umairfyp.MatchSummaryActivity;
+import com.example.umairfyp.PlayersListActivity;
+import com.example.umairfyp.R;
+import com.example.umairfyp.model.Batsman_data.Model_Batsman;
 import com.example.umairfyp.model.Data;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     //variables
 
+    Model_Batsman score_model;
+
+
+    //List<Data> from model class to get the data
     private List<Data> modelList;
     private Context context;
+
     String match_id;
     //constructor
 
@@ -42,29 +50,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup , int position) {
 
-        //this method will be called whenever our view holder will be created
-        //inflate the layout row.xml
-
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_match, viewGroup , false);
 
         return new ViewHolder(view);
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         //this will bind the data to view holder from where it'll be shown in other groups
         Data model= modelList.get(position);
+
         match_id = model.getId();
         holder.team1tv.setText(model.getTeams().get(0));
         holder.team2tv.setText(model.getTeams().get(1));
 
         if(model.getTeams().get(0).contains("Pakistan") || model.getTeams().get(1).contains("Pakistan"))
             holder.mainLayout.setBackgroundColor(Color.GREEN);
+
         holder.matchtypetv.setText(model.getMatchType());
         holder.matchstatustv.setText(model.getStatus());
-
         holder.datetv.setText(model.getDate());
 
 
@@ -78,37 +83,58 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                 String  date= model.getDate();
 
                 //options to Display in dialog
-                String[] options= {"Match Details","Players List","Match Summary"};
+                String[] options= {"Match Details","Squads","Match Summary"};
 
                 //Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());
-                builder.setTitle("Choose Option");//Title
+            //    builder.setTitle("Choose Option");//Title
 
                 //set options to dialog box
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        int inning_size=model.getScore().size();
+
                         if (which ==0){
                             //Match details is clicked
                             Intent intent = new Intent(context, MatchDetailActivity.class);
-                          //  intent.putExtra("match_id",match_id);
+                            intent.putExtra("match_id",match_id);
 
                             intent.putExtra("date",date);
                             intent.putExtra("Team1",model.getTeams().get(0));
                             intent.putExtra("Team2",model.getTeams().get(1));
                             intent.putExtra("MatchStatus",model.getStatus());
+                            intent.putExtra("innings_size",model.getScore().size());
 
-                            if(model.getStatus()!="Match not started") {
+
+                            if(inning_size >0) {
                                 intent.putExtra("Score1", model.getScore().get(0).getR().toString());
                                 intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
                                 intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
                             }
-                            int inning_size=model.getScore().size();
+
+
 
                             if( inning_size >1 ) {
                                 intent.putExtra("Score2", model.getScore().get(1).getR().toString());
                                 intent.putExtra("Wickets2", model.getScore().get(1).getW().toString());
                                 intent.putExtra("Overs2", model.getScore().get(1).getO().toString());
+                            }
+
+
+                            if(inning_size >2) {
+                                intent.putExtra("Score3", model.getScore().get(2).getR().toString());
+                                intent.putExtra("Wickets3", model.getScore().get(2).getW().toString());
+                                intent.putExtra("Overs3", model.getScore().get(2).getO().toString());
+                            }
+
+
+
+                            if( inning_size >3 ) {
+                                intent.putExtra("Score4", model.getScore().get(3).getR().toString());
+                                intent.putExtra("Wickets4", model.getScore().get(3).getW().toString());
+                                intent.putExtra("Overs4", model.getScore().get(3).getO().toString());
                             }
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -119,9 +145,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                         if (which ==1){
                             //Players list is clicked
-                            int team1players,team2players;
 
-                            Intent intent = new Intent(context, PlayersActivity.class);
+                            Intent intent = new Intent(context, PlayersListActivity.class);
                             intent.putExtra("match_id",match_id);
                             intent.putExtra("Team1",model.getTeams().get(0));
                             intent.putExtra("Team2",model.getTeams().get(1));
@@ -136,7 +161,35 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                             Intent intent = new Intent(context, MatchSummaryActivity.class);
                             intent.putExtra("match_id",match_id);
-                      //      intent.putExtra("Extras1",);
+
+                            if(inning_size >0) {
+                                intent.putExtra("Score1", model.getScore().get(0).getR().toString());
+                                intent.putExtra("Wickets1", model.getScore().get(0).getW().toString());
+                                intent.putExtra("Overs1", model.getScore().get(0).getO().toString());
+                            }
+
+
+
+                            if( inning_size >1 ) {
+                                intent.putExtra("Score2", model.getScore().get(1).getR().toString());
+                                intent.putExtra("Wickets2", model.getScore().get(1).getW().toString());
+                                intent.putExtra("Overs2", model.getScore().get(1).getO().toString());
+                            }
+
+
+                            if(inning_size >2) {
+                                intent.putExtra("Score3", model.getScore().get(2).getR().toString());
+                                intent.putExtra("Wickets3", model.getScore().get(2).getW().toString());
+                                intent.putExtra("Overs3", model.getScore().get(2).getO().toString());
+                            }
+
+
+
+                            if( inning_size >3 ) {
+                                intent.putExtra("Score4", model.getScore().get(3).getR().toString());
+                                intent.putExtra("Wickets4", model.getScore().get(3).getW().toString());
+                                intent.putExtra("Overs4", model.getScore().get(3).getO().toString());
+                            }
 
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
@@ -150,6 +203,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             }
         });
 
+
     }
 
     @Override
@@ -159,13 +213,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
         //define view objects
 
         TextView team1tv, team2tv, matchtypetv, matchstatustv, datetv,teamscore1,teamscore2;
         CardView cardView;
         TableLayout mainLayout;
+
 
 
         public ViewHolder(@NonNull View itemView) {

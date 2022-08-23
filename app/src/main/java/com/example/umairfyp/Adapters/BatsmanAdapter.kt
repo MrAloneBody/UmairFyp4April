@@ -1,15 +1,11 @@
-package com.example.umairfyp
+package com.example.umairfyp.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umairfyp.databinding.RowBatsmanBinding
-import com.example.umairfyp.databinding.RowPlayersBinding
-import com.example.umairfyp.model.Batsman_data.Batsman
 import com.example.umairfyp.model.Batsman_data.Batting
-import com.example.umairfyp.model.Batsman_data.Score
 import com.example.umairfyp.model.players_list.Data
-import com.example.umairfyp.model.Batsman_data.Scorecard
 
 
 class BatsmanAdapter(private var scorecard: List<Batting>) : RecyclerView.Adapter<BatsmanAdapter.ViewHolder>(){

@@ -15,9 +15,6 @@ public class Batting {
     @SerializedName("bowler")
     @Expose
     private Bowler bowler;
-    @SerializedName("catcher")
-    @Expose
-    private Catcher catcher;
     @SerializedName("dismissal-text")
     @Expose
     private String dismissalText;
@@ -36,6 +33,9 @@ public class Batting {
     @SerializedName("sr")
     @Expose
     private Double sr;
+    @SerializedName("catcher")
+    @Expose
+    private Catcher catcher;
 
     public Batsman getBatsman() {
         return batsman;
@@ -59,14 +59,6 @@ public class Batting {
 
     public void setBowler(Bowler bowler) {
         this.bowler = bowler;
-    }
-
-    public Catcher getCatcher() {
-        return catcher;
-    }
-
-    public void setCatcher(Catcher catcher) {
-        this.catcher = catcher;
     }
 
     public String getDismissalText() {
@@ -115,6 +107,14 @@ public class Batting {
 
     public void setSr(Double sr) {
         this.sr = sr;
+    }
+
+    public Catcher getCatcher() {
+        return catcher;
+    }
+
+    public void setCatcher(Catcher catcher) {
+        this.catcher = catcher;
     }
 
 }

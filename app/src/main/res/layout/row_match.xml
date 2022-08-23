@@ -1,131 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardview"
-    app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="#fff"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="1dp"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#B3AFAF"
+    android:backgroundTint="#FFFFFF"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
 
     <TableLayout
         android:id="@+id/tl_main_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="1dp"
-        android:stretchColumns="2">
+        android:padding="1dp">
+
 
         <TableRow>
-<!--
 
--->
             <TextView
                 android:id="@+id/team1tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="30dp"
                 android:textColor="#000"
-                >
-            </TextView>
-            <TextView
-                android:id="@+id/TeamScore1tv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:paddingLeft="5dp"
-                android:textColor="#000">
+                android:textSize="30sp"
+                android:textStyle="bold">
 
             </TextView>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/score1Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/Slash1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="/"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/wicket1tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/SP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="("
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/over1tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/EP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text=")"
+                    android:textColor="#000"></TextView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/score3Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dp"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/Slash3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="/"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/wicket3tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/SP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="("
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/over3tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/EP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text=")"
+                    android:textColor="#000">
+
+                </TextView>
+
+            </TableRow>
+
 
         </TableRow>
 
         <TableRow>
-      <!--
--->
+
             <TextView
                 android:id="@+id/team2tv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="30dp"
-                android:textColor="#000" >
-
-            </TextView>
-            <TextView
-                android:id="@+id/TeamScore2tv"
                 android:textColor="#000"
-                android:layout_width="match_parent"
-                android:paddingLeft="5dp"
-                android:layout_height="wrap_content"
-                android:layout_column="0">
+                android:textSize="30sp"
+                android:textStyle="bold">
 
             </TextView>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/score2Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/Slash2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="/"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/wicket2tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/SP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="("
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/over2tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/EP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text=")"
+                    android:textColor="#000"></TextView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/score4Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dp"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/Slash4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="/"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/wicket4tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/SP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="("
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/over4tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/EP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:text=")"
+                    android:textColor="#000">
+
+                </TextView>
+
+            </TableRow>
+
 
         </TableRow>
 
         <TableRow>
-          <!--  <TextView
-                android:text="Match Status      :   "
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0">
 
-            </TextView>
--->
             <TextView
                 android:id="@+id/matchstatustv"
-                android:paddingLeft="40dp"
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textColor="#000">
+
             </TextView>
 
         </TableRow>
-        <TableRow>
-          <!--  <TextView
-                android:text="Date                      :    "
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0">
 
-            </TextView>
--->
+        <TableRow>
+
             <TextView
                 android:id="@+id/datetv"
-                android:paddingLeft="40dp"
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textColor="#000">
+
             </TextView>
 
         </TableRow>
 
 
         <TableRow>
-            <!--      <TextView
-                      android:text="Matchtype           :    "
-                      android:textColor="#000"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_column="0">
 
-                  </TextView>
-      -->
             <TextView
                 android:id="@+id/matchtypetv"
-                android:paddingLeft="40dp"
-                android:layout_width="match_parent"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
-                android:textColor="#000" >
+                android:textAlignment="center"
+                android:textColor="#000">
+
             </TextView>
 
         </TableRow>
-
 
 
     </TableLayout>

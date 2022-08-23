@@ -3,53 +3,84 @@ package com.example.umairfyp.model.players_list;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class Player {
 
-    @SerializedName("apikey")
+    @SerializedName("id")
     @Expose
-    private String apikey;
-    @SerializedName("data")
+    private String id;
+    @SerializedName("name")
     @Expose
-    private List<Data> data = null;
-    @SerializedName("status")
+    private String name;
+    @SerializedName("role")
     @Expose
-    private String status;
-    @SerializedName("info")
+    private String role;
+    @SerializedName("battingStyle")
     @Expose
-    private Info info;
+    private String battingStyle;
+    @SerializedName("country")
+    @Expose
+    private String country;
+    @SerializedName("playerImg")
+    @Expose
+    private String playerImg;
+    @SerializedName("bowlingStyle")
+    @Expose
+    private String bowlingStyle;
 
-    public String getApikey() {
-        return apikey;
+    public String getId() {
+        return id;
     }
 
-    public void setApikey(String apikey) {
-        this.apikey = apikey;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public List<Data> getData() {
-        return data;
+    public String getName() {
+        return name;
     }
 
-    public void setData(List<Data> data) {
-        this.data = data;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getStatus() {
-        return status;
+    public String getRole() {
+        return role;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public Info getInfo() {
-        return info;
+    public String getBattingStyle() {
+        return battingStyle;
     }
 
-    public void setInfo(Info info) {
-        this.info = info;
+    public void setBattingStyle(String battingStyle) {
+        this.battingStyle = battingStyle;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPlayerImg() {
+        return playerImg;
+    }
+
+    public void setPlayerImg(String playerImg) {
+        this.playerImg = playerImg;
+    }
+
+    public String getBowlingStyle() {
+        return bowlingStyle;
+    }
+
+    public void setBowlingStyle(String bowlingStyle) {
+        this.bowlingStyle = bowlingStyle;
     }
 
 }
