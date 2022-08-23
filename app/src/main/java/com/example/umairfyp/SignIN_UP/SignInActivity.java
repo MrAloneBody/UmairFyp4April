@@ -3,6 +3,7 @@ package com.example.umairfyp.SignIN_UP;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivitySignInBinding;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.protobuf.StringValue;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -29,9 +31,11 @@ public class SignInActivity extends AppCompatActivity {
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
-     //   preferenceManager = new PreferenceManager(getApplicationContext());
      //if already login dont show login page
-           if(prefrenceManager1.getBoolean(Constants.KEY_IS_SIGNED_IN)){
+
+        Log.d("KEY_VALUE",prefrenceManager1.getString(Constants.KEY_IS_SIGNED_IN) );
+        if(prefrenceManager1.getString(Constants.KEY_IS_SIGNED_IN).equals(String.valueOf(true)))
+        {
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             finish();
@@ -62,7 +66,7 @@ public class SignInActivity extends AppCompatActivity {
                     if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0){
 
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
-                        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
+                        prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(true));
                         prefrenceManager1.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
                         prefrenceManager1.putString(Constants.KEY_EMAIL,documentSnapshot.getString(Constants.KEY_EMAIL));
                         prefrenceManager1.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));

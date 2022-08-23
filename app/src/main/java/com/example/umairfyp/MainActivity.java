@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         loadUrlData();
 
 
+        Log.d("Working",Constants.KEY_IS_SIGNED_IN );
+
 
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +166,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void signOut(){
         Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT).show();
+     //   Constants.KEY_IS_SIGNED_IN = String.valueOf(false);
 
-        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,false);
+        prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(false));
         startActivity(new Intent(getApplicationContext(), SignInActivity.class));
 
 /*

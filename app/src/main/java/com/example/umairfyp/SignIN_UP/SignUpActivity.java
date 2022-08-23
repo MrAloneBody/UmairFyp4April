@@ -53,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void signUp() {
         loading(true);
+
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         HashMap<String,Object> user = new HashMap<>();
         user.put(Constants.KEY_NAME,binding.UserName.getText().toString());
@@ -62,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                 .add(user)
                 .addOnSuccessListener(documentReference -> {
                     loading(false);
-                    prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
+                    prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(true));
                     prefrenceManager1.putString(Constants.KEY_USER_ID,documentReference.getId());
                     prefrenceManager1.putString(Constants.KEY_EMAIL,binding.etMail.getText().toString());
                     Log.d("KEY_EMAIL", (String) user.get(Constants.KEY_EMAIL));
