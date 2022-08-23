@@ -95,7 +95,7 @@ public class comment_activity extends AppCompatActivity {
 
               }
           }
-          Collections.sort(commentMessages,(obj1,obj2)-> obj1.date);
+     //     Collections.sort(commentMessages,(obj1,obj2)-> obj1.date);
           if(count==0){
               commentadapter.notifyDataSetChanged();
           }else{
