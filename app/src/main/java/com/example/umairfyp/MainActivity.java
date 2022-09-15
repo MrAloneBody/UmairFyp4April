@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT).show();
      //   Constants.KEY_IS_SIGNED_IN = String.valueOf(false);
 
-        prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(false));
+        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN, false);
         startActivity(new Intent(getApplicationContext(), SignInActivity.class));
 
 /*

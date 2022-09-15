@@ -53,7 +53,7 @@ public class comment_activity extends AppCompatActivity {
 
     private void init(){
 
-        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(this);
         commentMessages = new ArrayList<>();
 
         commentadapter = new CommentAdapter(

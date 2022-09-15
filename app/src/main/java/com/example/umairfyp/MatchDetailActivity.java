@@ -221,7 +221,7 @@ public class MatchDetailActivity extends AppCompatActivity {
 
     private void init(){
 
-        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(this);
         commentMessages = new ArrayList<>();
         commentadapter = new CommentAdapter(commentMessages,prefrenceManager1.getString(Constants.KEY_USER_ID));
         binding.CommentsRecyclerView.setAdapter(commentadapter);

@@ -26,7 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(this);
         setListeners();
     }
 
@@ -63,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                 .add(user)
                 .addOnSuccessListener(documentReference -> {
                     loading(false);
-                    prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(true));
+                    prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                     prefrenceManager1.putString(Constants.KEY_USER_ID,documentReference.getId());
                     prefrenceManager1.putString(Constants.KEY_EMAIL,binding.etMail.getText().toString());
                     Log.d("KEY_EMAIL", (String) user.get(Constants.KEY_EMAIL));

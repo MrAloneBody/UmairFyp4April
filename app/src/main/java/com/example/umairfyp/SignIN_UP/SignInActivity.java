@@ -30,11 +30,10 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        prefrenceManager1 = new PrefrenceManager1(getApplicationContext());
+        prefrenceManager1 = new PrefrenceManager1(this);
      //if already login dont show login page
 
-        Log.d("KEY_VALUE",prefrenceManager1.getString(Constants.KEY_IS_SIGNED_IN) );
-        if(prefrenceManager1.getString(Constants.KEY_IS_SIGNED_IN).equals(String.valueOf(true)))
+        if(prefrenceManager1.getBoolean(Constants.KEY_IS_SIGNED_IN))
         {
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
@@ -66,7 +65,7 @@ public class SignInActivity extends AppCompatActivity {
                     if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0){
 
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
-                        prefrenceManager1.putString(Constants.KEY_IS_SIGNED_IN, String.valueOf(true));
+                        prefrenceManager1.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         prefrenceManager1.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
                         prefrenceManager1.putString(Constants.KEY_EMAIL,documentSnapshot.getString(Constants.KEY_EMAIL));
                         prefrenceManager1.putString(Constants.KEY_NAME,documentSnapshot.getString(Constants.KEY_NAME));
