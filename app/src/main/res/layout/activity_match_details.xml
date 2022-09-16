@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/match_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MatchDetailActivity">
+    tools:context=".MatchDetailsActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/header_details"
@@ -15,7 +13,8 @@
         app:cardBackgroundColor="#C1E7F8"
         app:cardCornerRadius="20dp"
         app:cardElevation="3dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -28,9 +27,7 @@
                     android:id="@+id/team1tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000">
-
-                </TextView>
+                    android:textColor="#000" />
 
                 <TableRow>
 
@@ -39,7 +36,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000" />
 
                     <TextView
                         android:id="@+id/Slash1"
@@ -47,14 +44,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="/"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000" />
 
                     <TextView
                         android:id="@+id/wicket1tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000" />
 
                     <TextView
                         android:id="@+id/SP1"
@@ -62,14 +59,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:text="("
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000" />
 
                     <TextView
                         android:id="@+id/over1tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/EP1"
@@ -77,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:text=")"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                 </TableRow>
 
@@ -89,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingLeft="20dp"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/Slash3"
@@ -97,14 +94,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="/"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/wicket3tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/SP3"
@@ -112,14 +109,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:text="("
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/over3tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/EP3"
@@ -153,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/Slash2"
@@ -161,14 +158,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="/"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/wicket2tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/SP2"
@@ -176,14 +173,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:text="("
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/over2tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/EP2"
@@ -191,7 +188,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
                         android:text=")"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                 </TableRow>
 
@@ -203,7 +200,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingLeft="20dp"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/Slash4"
@@ -211,14 +208,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="/"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/wicket4tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/SP4"
@@ -226,14 +223,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:text="("
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/over4tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:textColor="#000"></TextView>
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/EP4"
@@ -260,7 +257,7 @@
                     android:textAlignment="center"
                     android:textColor="#000"
 
-                    ></TextView>
+                    />
 
             </TableRow>
 
@@ -272,89 +269,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:textColor="#000"
-
-                    ></TextView>
+                    android:textColor="#000" />
 
             </TableRow>
 
         </TableLayout>
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_comments"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_container_recieved_message"
+        app:layout_constraintTop_toBottomOf="@id/header_details"
+        app:layout_constraintBottom_toTopOf="@id/comment_section"/>
 
-        <LinearLayout
-            android:id="@+id/headerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:gravity="center"
-            android:minHeight="?attr/actionBarSize"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/comment_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Comments"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="25sp">
+        <EditText
+            android:id="@+id/writeComment"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_chat_input"
+            android:focusable="true"
+            android:hint="Write Your Comment"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
-            </TextView>
+        <ImageView
+            android:id="@+id/send_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img" />
+    </LinearLayout>
 
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Comments_Recycler_View"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/comment_section"
-            android:layout_below="@id/headerLayout"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="0dp"
-            app:stackFromEnd="true" />
-
-        <LinearLayout
-            android:id="@+id/comment_section"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            android:minHeight="50dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/writeComment"
-                android:layout_width="360dp"
-                android:layout_height="50dp"
-                android:background="@drawable/background_chat_input"
-                android:focusable="true"
-                android:hint="Write Your Comment"
-                android:maxLines="2"
-                android:paddingLeft="10dp"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
-
-            <ImageView
-                android:id="@+id/send_comment"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/img">
-
-            </ImageView>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -131,10 +131,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 if (response.body() != null){
+                    if (response.body().getStatus().equals("failure"))
+                        Toast.makeText(MainActivity.this, response.body().getReason(), Toast.LENGTH_SHORT).show();
+                    else {
+                        newModelList = (response.body().getData());
+                        newAdapter = new Adapter(newModelList, getApplicationContext());
+                        mRecyclerView.setAdapter(newAdapter);
+                    }
                     pd.dismiss();
-                    newModelList = (response.body().getData());
-                    newAdapter = new Adapter(newModelList, getApplicationContext());
-                    mRecyclerView.setAdapter(newAdapter);
                 }
                 else
                     Toast.makeText(MainActivity.this, "No Response", Toast.LENGTH_SHORT).show();

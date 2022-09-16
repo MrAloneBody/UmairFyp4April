@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -16,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.umairfyp.MatchDetailActivity;
+import com.example.umairfyp.MatchDetailsActivity;
 import com.example.umairfyp.MatchSummaryActivity;
 import com.example.umairfyp.PlayersListActivity;
 import com.example.umairfyp.R;
@@ -98,7 +97,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
                         if (which ==0){
                             //Match details is clicked
-                            Intent intent = new Intent(context, MatchDetailActivity.class);
+                            Intent intent = new Intent(context, MatchDetailsActivity.class);
                             intent.putExtra("match_id",match_id);
 
                             intent.putExtra("date",date);

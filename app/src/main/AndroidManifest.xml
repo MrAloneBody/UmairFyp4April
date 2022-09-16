@@ -12,13 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UmairFyp">
         <activity
-            android:name=".comment_activity"
+            android:name=".MatchDetailsActivity"
             android:exported="false" />
-<!--        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2" />
-            -->
         <activity
             android:name=".PlayersListActivity"
             android:exported="false" />
@@ -36,13 +31,6 @@
             android:exported="false" />
         <activity
             android:name=".MatchSummaryActivity"
-            android:exported="false" />
-    <!--    <activity
-            android:name=".PlayersActivity"
-            android:exported="false" />
-            -->
-        <activity
-            android:name=".MatchDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -16,6 +16,9 @@ public class Model {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("reason")
+    @Expose
+    private String reason;
     @SerializedName("info")
     @Expose
     private Info info;
@@ -40,8 +43,16 @@ public class Model {
         return status;
     }
 
+    public String getReason() {
+        return reason;
+    }
+
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public Info getInfo() {
