@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         frag_layout = findViewById(R.id.fragment_layout);
         current_matches_layout = findViewById(R.id.Current_matches_layout);
+        prefrenceManager1 = new PrefrenceManager1(this);
 
         //recyclerview
         mRecyclerView = findViewById(R.id.recyclerview);

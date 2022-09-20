@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.umairfyp.Utilities.Constants;
+import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +32,7 @@ public class Feedback_fragment extends Fragment {
 
     View view;
     FirebaseFirestore database;
+    private PrefrenceManager1 prefrenceManager1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +44,7 @@ public class Feedback_fragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_feedback_fragment, container, false);
         ImageView send_feedback = view.findViewById(R.id.send_feedback);
         EditText write_feedback = view.findViewById(R.id.WriteFeedback);
+        prefrenceManager1 = new PrefrenceManager1(requireActivity());
 
         send_feedback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +62,7 @@ public class Feedback_fragment extends Fragment {
                     Log.d("KEY_EMAIL", String.valueOf(user.get(Constants.KEY_EMAIL)));
                     Log.d("KEY_EMAIL", String.valueOf(user.get(Constants.KEY_NAME)));
 
-                    user.put("Email : ", user.get(Constants.KEY_EMAIL));
+                    user.put("Email : ", prefrenceManager1.getString(Constants.KEY_EMAIL));
 
                     database.collection("Feedbacks")
                             .add(user)

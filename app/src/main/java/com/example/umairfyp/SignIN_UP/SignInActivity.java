@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.umairfyp.MainActivity;
 import com.example.umairfyp.Utilities.Constants;
+import com.example.umairfyp.Utilities.Pattern;
 import com.example.umairfyp.Utilities.PrefrenceManager1;
 import com.example.umairfyp.databinding.ActivitySignInBinding;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -49,7 +50,10 @@ public class SignInActivity extends AppCompatActivity {
 
         binding.LoginBtn.setOnClickListener(v -> {
             if(isValidSignInDetails()){
-                signIn();
+                if(!Pattern.INSTANCE.isValidEmail(binding.etMail.getText().toString()))
+                    Toast.makeText(this, "Please enter valid email.", Toast.LENGTH_SHORT).show();
+                else
+                    signIn();
             }
         });
     }
